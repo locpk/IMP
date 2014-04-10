@@ -45,7 +45,7 @@
             this.femalebutton = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.phone_selector = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.usernamebox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -246,19 +246,20 @@
             this.Password.Validating += new System.ComponentModel.CancelEventHandler(this.Password_Validating);
             this.Password.Validated += new System.EventHandler(this.Password_Validated);
             // 
-            // comboBox1
+            // phone_selector
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.Orange;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "+1 US",
-            "+86 CN"});
-            this.comboBox1.Location = new System.Drawing.Point(311, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 20);
-            this.comboBox1.TabIndex = 16;
+            this.phone_selector.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.phone_selector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.phone_selector.ForeColor = System.Drawing.Color.Orange;
+            this.phone_selector.FormattingEnabled = true;
+            this.phone_selector.Items.AddRange(new object[] {
+            "US +1",
+            "CN +86"});
+            this.phone_selector.Location = new System.Drawing.Point(311, 141);
+            this.phone_selector.Name = "phone_selector";
+            this.phone_selector.Size = new System.Drawing.Size(75, 20);
+            this.phone_selector.TabIndex = 16;
+            this.phone_selector.Tag = "";
             // 
             // label7
             // 
@@ -364,7 +365,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.usernamebox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.phone_selector);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.femalebutton);
@@ -384,6 +385,7 @@
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gold;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "register_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Screen";
@@ -425,7 +427,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider5;
         private System.Windows.Forms.ErrorProvider errorProvider6;
         private System.Windows.Forms.ErrorProvider errorProvider7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox phone_selector;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox usernamebox;
         private System.Windows.Forms.Label label7;

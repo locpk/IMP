@@ -22,6 +22,7 @@ namespace WorkshopTest1
 {
     public partial class register_screen : Form
     {
+        Confirm_Box messagebox = new Confirm_Box();
         public register_screen()
         {
             InitializeComponent();
@@ -32,16 +33,23 @@ namespace WorkshopTest1
             this.ActiveControl = usernamebox;
         }
 
-
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
             RadioButton[] radioButtons = new RadioButton[] { malebutton, femalebutton };
 
+            if (string.IsNullOrEmpty(this.Password.Text))
+            {
+                this.errorProvider5.SetError(this.Password, "Must have an Uppercase letter");
+                return;
+            }
+
             if (!radioButtons.Any(rb => rb.Checked))
                 // No radio buttons are checked
             {
-                MessageBox.Show("You need to choose gender!");
+
+                messagebox.Show("You need to choose gender!");
                 errorProvider7.SetError(this.femalebutton,"You need to choose gender!");
                 return;
             }
@@ -75,10 +83,12 @@ namespace WorkshopTest1
                 nodeLName.InnerText = Last_name.Text;
 
                 XmlNode nodePh = doc.CreateElement("Phone_Number");
-                nodePh.InnerText = Phone_number.Text;
+                nodePh.InnerText = phone_selector.Text + Phone_number.Text;
 
-                XmlNode nodePass = doc.CreateElement("Password");
-                nodePass.InnerText = GetHashString(Password.Text);
+                
+                XmlAttribute pwd = doc.CreateAttribute("Password");
+                pwd.Value = GetHashString(Password.Text);
+                nodeUName.Attributes.Append(pwd);
 
                 
                 XmlNode nodeEmail = doc.CreateElement("Email");
@@ -101,7 +111,6 @@ namespace WorkshopTest1
                 node.AppendChild(nodeFName);
                 node.AppendChild(nodeLName);
                 node.AppendChild(nodePh);
-                node.AppendChild(nodePass);
                 node.AppendChild(nodeEmail);
                 node.AppendChild(nodeBirday);
                 node.AppendChild(nodeGender);
@@ -113,7 +122,19 @@ namespace WorkshopTest1
 
                 //save back
                 doc.Save(filename);
-                MessageBox.Show("Saved successfully!");
+
+                
+                messagebox.Show("Saved successfully!");
+
+                //clear input fields
+                usernamebox.Text = null;
+                First_name.Text = null;
+                Last_name.Text = null;
+                Phone_number.Text = null;
+                Email.Text = null;
+                Password.Text = null;
+                malebutton.Checked = false;
+                femalebutton.Checked = false;
 
             }
             else //The file does not exist, we'll create it
@@ -129,11 +150,21 @@ namespace WorkshopTest1
                   gender=malebutton.Text;
                 else
                   gender=femalebutton.Text;
-                createNode(usernamebox.Text, First_name.Text, Last_name.Text, Phone_number.Text,Password.Text, Email.Text, birthday.SelectionEnd.ToShortDateString(),gender, writer);
+                createNode(usernamebox.Text, First_name.Text, Last_name.Text, phone_selector.Text + Phone_number.Text, GetHashString(Password.Text), Email.Text, birthday.SelectionEnd.ToShortDateString(), gender, writer);
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
                 writer.Close();
-                MessageBox.Show("XML File created ! ");
+
+                //clear input fields
+                usernamebox.Text = null;
+                First_name.Text = null;
+                Last_name.Text = null;
+                Phone_number.Text = null;
+                Email.Text = null;
+                Password.Text = null;
+                malebutton.Checked = false;
+                femalebutton.Checked = false;
+                
             }
         }
 
@@ -141,6 +172,7 @@ namespace WorkshopTest1
         {
             writer.WriteStartElement("Account");
             writer.WriteStartElement("Username");
+            writer.WriteAttributeString("Password", pw);
             writer.WriteString(un);
             writer.WriteEndElement();
             writer.WriteStartElement("First_Name");
@@ -151,9 +183,6 @@ namespace WorkshopTest1
             writer.WriteEndElement();
             writer.WriteStartElement("Phone_Number");
             writer.WriteString(ph);
-            writer.WriteEndElement();
-            writer.WriteStartElement("Password");
-            writer.WriteString(GetHashString(pw));
             writer.WriteEndElement();
             writer.WriteStartElement("Email");
             writer.WriteString(em);
@@ -199,7 +228,7 @@ namespace WorkshopTest1
             {
                 
                 this.errorProvider3.SetError(this.Phone_number, "Phone number can only be numbers");
-                MessageBox.Show("Phone number can only be numbers");
+                messagebox.Show("Phone number can only be numbers");
             }
             
         }
@@ -208,22 +237,25 @@ namespace WorkshopTest1
         private void usernamebox_Validating(object sender, CancelEventArgs e)
         {
             bool cancel = false;
+
             //create new instance of XmlDocument
             XmlDocument doc = new XmlDocument();
-
-            // Load an XML file into the XmlDocument object. 
-            doc.Load("info.xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nodeList = root.GetElementsByTagName("Username");
-            IEnumerator ienum = nodeList.GetEnumerator();
-            while (ienum.MoveNext())
+            if (File.Exists("info.xml"))
             {
-                XmlNode username = (XmlNode)ienum.Current;
-
-                if (username.InnerText.Equals(usernamebox.Text))
+                // Load an XML file into the XmlDocument object. 
+                doc.Load("info.xml");
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList nodeList = root.GetElementsByTagName("Username");
+                IEnumerator ienum = nodeList.GetEnumerator();
+                while (ienum.MoveNext())
                 {
-                    this.errorProvider8.SetError(this.usernamebox, "The user is existed!");
-                    cancel = true;
+                    XmlNode username = (XmlNode)ienum.Current;
+
+                    if (username.InnerText.Equals(usernamebox.Text))
+                    {
+                        this.errorProvider8.SetError(this.usernamebox, "The user is existed!");
+                        cancel = true;
+                    }
                 }
             }
             // validate the username it can only consist of letters and numbers
