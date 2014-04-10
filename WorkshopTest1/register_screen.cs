@@ -355,6 +355,25 @@ namespace WorkshopTest1
             femalebutton.Checked = false;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is welcome_screen)
+                {
+                    frm.Show();
+                    return;
+                }
+            }
+        }
+
+        private void usernamebox_Leave(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

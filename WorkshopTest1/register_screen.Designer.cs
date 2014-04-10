@@ -57,7 +57,7 @@
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.cancel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -281,6 +281,7 @@
             this.usernamebox.TabIndex = 18;
             this.usernamebox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernamebox.TextChanged += new System.EventHandler(this.usernamebox_TextChanged);
+            this.usernamebox.Leave += new System.EventHandler(this.usernamebox_Leave);
             this.usernamebox.Validating += new System.ComponentModel.CancelEventHandler(this.usernamebox_Validating);
             this.usernamebox.Validated += new System.EventHandler(this.usernamebox_Validated);
             // 
@@ -333,21 +334,23 @@
             this.errorProvider8.ContainerControl = this;
             this.errorProvider8.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider8.Icon")));
             // 
-            // button2
+            // cancel_button
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(411, 451);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 21);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancel_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.cancel_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cancel_button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cancel_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.cancel_button.FlatAppearance.BorderSize = 0;
+            this.cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancel_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancel_button.Location = new System.Drawing.Point(411, 451);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(163, 21);
+            this.cancel_button.TabIndex = 20;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.button2_Click);
             // 
             // register_screen
             // 
@@ -357,7 +360,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(747, 509);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.usernamebox);
             this.Controls.Add(this.label7);
@@ -427,7 +430,7 @@
         private System.Windows.Forms.TextBox usernamebox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancel_button;
     }
 }
 

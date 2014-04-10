@@ -16,7 +16,7 @@ namespace WorkshopTest1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new register_screen());
+            Application.Run(new welcome_screen());
         }
     }
 }
