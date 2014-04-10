@@ -195,7 +195,7 @@ namespace WorkshopTest1
                 
                 this.errorProvider3.SetError(this.Phone_number, "You must provide your phone number!");
             }
-            else if (!Regex.IsMatch(Phone_number.Text, @"[0-9]"))
+            else if (!Regex.IsMatch(Phone_number.Text, @"^[0-9]"))
             {
                 
                 this.errorProvider3.SetError(this.Phone_number, "Phone number can only be numbers");
@@ -238,7 +238,7 @@ namespace WorkshopTest1
                 cancel = true;
                 this.errorProvider8.SetError(this.usernamebox, "You must provide your first name!");
             }
-            else if (!Regex.IsMatch(usernamebox.Text, @"[a-zA-Z0-9]"))
+            else if (!Regex.IsMatch(usernamebox.Text, @"^[a-zA-Z0-9]"))
             {
                 cancel = true;
                 this.errorProvider8.SetError(this.usernamebox, "Username can only combined by letters and numbers");
@@ -265,7 +265,7 @@ namespace WorkshopTest1
                 cancel = true;
                 this.errorProvider1.SetError(this.First_name, "You must provide your first name!");
             }
-            else if (!Regex.IsMatch(First_name.Text, @"[a-zA-Z]"))
+            else if (!Regex.IsMatch(First_name.Text, @"^[a-zA-Z]"))
             {
                 cancel = true;
                 this.errorProvider1.SetError(this.First_name, "Name can only be letters");
@@ -293,7 +293,7 @@ namespace WorkshopTest1
                 cancel = true;
                 this.errorProvider2.SetError(this.Last_name, "You must provide your Last name!");
             }
-            else if (!Regex.IsMatch(Last_name.Text, @"[a-zA-Z]"))
+            else if (!Regex.IsMatch(Last_name.Text, @"^[a-zA-Z]"))
             {
                 cancel = true;
                 this.errorProvider2.SetError(this.Last_name, "Name can only be letters");
