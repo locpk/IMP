@@ -190,7 +190,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ForeColor = System.Drawing.Color.Gold;
             this.button1.Location = new System.Drawing.Point(175, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 21);
@@ -344,7 +344,7 @@
             this.cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.cancel_button.FlatAppearance.BorderSize = 0;
             this.cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancel_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancel_button.ForeColor = System.Drawing.Color.Gold;
             this.cancel_button.Location = new System.Drawing.Point(411, 451);
             this.cancel_button.Name = "cancel_button";
             this.cancel_button.Size = new System.Drawing.Size(163, 21);

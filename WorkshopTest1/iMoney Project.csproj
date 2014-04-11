@@ -61,6 +61,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="income_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="income_screen.Designer.cs">
+      <DependentUpon>income_screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="register_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Confirm_Box.resx">
       <DependentUpon>Confirm_Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="income_screen.resx">
+      <DependentUpon>income_screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="register_screen.resx">
       <DependentUpon>register_screen.cs</DependentUpon>
