@@ -62,8 +62,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(661, 475);
-            this.splitContainer1.SplitterDistance = 159;
+            this.splitContainer1.Size = new System.Drawing.Size(567, 515);
+            this.splitContainer1.SplitterDistance = 136;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
             // income_button
@@ -79,7 +80,7 @@
             this.income_button.ForeColor = System.Drawing.Color.Gold;
             this.income_button.Location = new System.Drawing.Point(0, 0);
             this.income_button.Name = "income_button";
-            this.income_button.Size = new System.Drawing.Size(159, 475);
+            this.income_button.Size = new System.Drawing.Size(136, 515);
             this.income_button.TabIndex = 12;
             this.income_button.Text = "Income";
             this.income_button.UseVisualStyleBackColor = true;
@@ -98,8 +99,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(498, 475);
-            this.splitContainer2.SplitterDistance = 165;
+            this.splitContainer2.Size = new System.Drawing.Size(428, 515);
+            this.splitContainer2.SplitterDistance = 141;
+            this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
             // expense_button
@@ -115,7 +117,7 @@
             this.expense_button.ForeColor = System.Drawing.Color.Gold;
             this.expense_button.Location = new System.Drawing.Point(0, 0);
             this.expense_button.Name = "expense_button";
-            this.expense_button.Size = new System.Drawing.Size(165, 475);
+            this.expense_button.Size = new System.Drawing.Size(141, 515);
             this.expense_button.TabIndex = 13;
             this.expense_button.Text = "Expense";
             this.expense_button.UseVisualStyleBackColor = true;
@@ -134,8 +136,9 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.logout_button);
-            this.splitContainer3.Size = new System.Drawing.Size(329, 475);
-            this.splitContainer3.SplitterDistance = 163;
+            this.splitContainer3.Size = new System.Drawing.Size(284, 515);
+            this.splitContainer3.SplitterDistance = 140;
+            this.splitContainer3.SplitterWidth = 3;
             this.splitContainer3.TabIndex = 0;
             // 
             // report_button
@@ -151,7 +154,7 @@
             this.report_button.ForeColor = System.Drawing.Color.Gold;
             this.report_button.Location = new System.Drawing.Point(0, 0);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(163, 475);
+            this.report_button.Size = new System.Drawing.Size(140, 515);
             this.report_button.TabIndex = 14;
             this.report_button.Text = "Report";
             this.report_button.UseVisualStyleBackColor = true;
@@ -170,7 +173,7 @@
             this.logout_button.ForeColor = System.Drawing.Color.Gold;
             this.logout_button.Location = new System.Drawing.Point(0, 0);
             this.logout_button.Name = "logout_button";
-            this.logout_button.Size = new System.Drawing.Size(162, 475);
+            this.logout_button.Size = new System.Drawing.Size(141, 515);
             this.logout_button.TabIndex = 14;
             this.logout_button.Text = "Log Out";
             this.logout_button.UseVisualStyleBackColor = true;
@@ -178,9 +181,10 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 475);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(567, 515);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Menu";
             this.Text = "Menu";

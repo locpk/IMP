@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.monthly_DS = new WorkshopTest1.monthly_DS();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableTableAdapter = new WorkshopTest1.monthly_DSTableAdapters.TableTableAdapter();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -47,25 +44,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.amount_picker = new System.Windows.Forms.NumericUpDown();
-            this.tableAdapterManager = new WorkshopTest1.monthly_DSTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.monthly_DS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            this.monthly_reportDBDataSet = new WorkshopTest1.monthly_reportDBDataSet();
+            this.monthlyDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthlyDBTableAdapter = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter();
+            this.tableAdapterManager = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // monthly_DS
-            // 
-            this.monthly_DS.DataSetName = "monthly_DS";
-            this.monthly_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.monthly_DS;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
             // 
             // BottomToolStripPanel
             // 
@@ -113,9 +99,9 @@
             this.typeCBox.Items.AddRange(new object[] {
             "Other",
             "Salary"});
-            this.typeCBox.Location = new System.Drawing.Point(283, 138);
+            this.typeCBox.Location = new System.Drawing.Point(243, 150);
             this.typeCBox.Name = "typeCBox";
-            this.typeCBox.Size = new System.Drawing.Size(124, 20);
+            this.typeCBox.Size = new System.Drawing.Size(107, 21);
             this.typeCBox.Sorted = true;
             this.typeCBox.TabIndex = 38;
             // 
@@ -129,9 +115,9 @@
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Poor Richard", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.Gold;
-            this.exit_button.Location = new System.Drawing.Point(320, 311);
+            this.exit_button.Location = new System.Drawing.Point(274, 337);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(163, 116);
+            this.exit_button.Size = new System.Drawing.Size(140, 126);
             this.exit_button.TabIndex = 37;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = true;
@@ -145,16 +131,16 @@
             this.save_date.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.save_date.Location = new System.Drawing.Point(283, 180);
+            this.save_date.Location = new System.Drawing.Point(243, 195);
             this.save_date.Name = "save_date";
-            this.save_date.Size = new System.Drawing.Size(124, 20);
+            this.save_date.Size = new System.Drawing.Size(107, 20);
             this.save_date.TabIndex = 36;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 177);
+            this.label3.Location = new System.Drawing.Point(74, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 35;
@@ -164,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 136);
+            this.label2.Location = new System.Drawing.Point(74, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 24);
             this.label2.TabIndex = 34;
@@ -180,9 +166,9 @@
             this.save_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_button.Font = new System.Drawing.Font("Poor Richard", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save_button.ForeColor = System.Drawing.Color.Gold;
-            this.save_button.Location = new System.Drawing.Point(90, 311);
+            this.save_button.Location = new System.Drawing.Point(77, 337);
             this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(163, 116);
+            this.save_button.Size = new System.Drawing.Size(140, 126);
             this.save_button.TabIndex = 33;
             this.save_button.Text = "Save";
             this.save_button.UseVisualStyleBackColor = true;
@@ -192,7 +178,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(116, 240);
+            this.checkBox1.Location = new System.Drawing.Point(99, 260);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(288, 26);
             this.checkBox1.TabIndex = 32;
@@ -203,7 +189,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(410, 97);
+            this.label1.Location = new System.Drawing.Point(351, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 24);
             this.label1.TabIndex = 31;
@@ -213,7 +199,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(86, 97);
+            this.label7.Location = new System.Drawing.Point(74, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 24);
             this.label7.TabIndex = 30;
@@ -226,7 +212,7 @@
             this.amount_picker.DecimalPlaces = 2;
             this.amount_picker.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amount_picker.ForeColor = System.Drawing.Color.Gold;
-            this.amount_picker.Location = new System.Drawing.Point(283, 94);
+            this.amount_picker.Location = new System.Drawing.Point(243, 102);
             this.amount_picker.Margin = new System.Windows.Forms.Padding(0);
             this.amount_picker.Maximum = new decimal(new int[] {
             1316134911,
@@ -234,22 +220,36 @@
             0,
             0});
             this.amount_picker.Name = "amount_picker";
-            this.amount_picker.Size = new System.Drawing.Size(124, 27);
+            this.amount_picker.Size = new System.Drawing.Size(106, 27);
             this.amount_picker.TabIndex = 29;
             this.amount_picker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.amount_picker.ThousandsSeparator = true;
             // 
+            // monthly_reportDBDataSet
+            // 
+            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
+            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monthlyDBBindingSource
+            // 
+            this.monthlyDBBindingSource.DataMember = "monthlyDB";
+            this.monthlyDBBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthlyDBTableAdapter
+            // 
+            this.monthlyDBTableAdapter.ClearBeforeFill = true;
+            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WorkshopTest1.monthly_DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.monthlyDBTableAdapter = this.monthlyDBTableAdapter;
+            this.tableAdapterManager.UpdateOrder = WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // income_screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 521);
+            this.ClientSize = new System.Drawing.Size(500, 751);
             this.Controls.Add(this.typeCBox);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.save_date);
@@ -263,9 +263,9 @@
             this.Name = "income_screen";
             this.Text = "income_screen";
             this.Load += new System.EventHandler(this.income_screen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.monthly_DS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,9 +273,7 @@
 
         #endregion
 
-        private monthly_DS monthly_DS;
-        private System.Windows.Forms.BindingSource tableBindingSource;
-        private monthly_DSTableAdapters.TableTableAdapter tableTableAdapter;
+
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
         private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
@@ -291,6 +289,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown amount_picker;
-        private monthly_DSTableAdapters.TableAdapterManager tableAdapterManager;
+        private monthly_reportDBDataSet monthly_reportDBDataSet;
+        private System.Windows.Forms.BindingSource monthlyDBBindingSource;
+        private monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter monthlyDBTableAdapter;
+        private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        
     }
 }

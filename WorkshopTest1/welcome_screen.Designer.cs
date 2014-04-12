@@ -40,15 +40,12 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.No;
-            this.label1.Font = new System.Drawing.Font("Castellar", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(37, 64);
+            this.label1.Location = new System.Drawing.Point(47, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(582, 39);
+            this.label1.Size = new System.Drawing.Size(462, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "iMoney Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,20 +53,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 207);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(347, 206);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(297, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 17);
+            this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
@@ -77,11 +74,11 @@
             // 
             this.usernamebox.BackColor = System.Drawing.SystemColors.ControlDark;
             this.usernamebox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernamebox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernamebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernamebox.ForeColor = System.Drawing.Color.Gold;
-            this.usernamebox.Location = new System.Drawing.Point(165, 207);
+            this.usernamebox.Location = new System.Drawing.Point(141, 224);
             this.usernamebox.Name = "usernamebox";
-            this.usernamebox.Size = new System.Drawing.Size(116, 18);
+            this.usernamebox.Size = new System.Drawing.Size(99, 17);
             this.usernamebox.TabIndex = 19;
             this.usernamebox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernamebox.TextChanged += new System.EventHandler(this.usernamebox_TextChanged);
@@ -90,12 +87,12 @@
             // 
             this.Password.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Password.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password.ForeColor = System.Drawing.Color.Gold;
-            this.Password.Location = new System.Drawing.Point(457, 206);
+            this.Password.Location = new System.Drawing.Point(392, 223);
             this.Password.MaxLength = 20;
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(126, 18);
+            this.Password.Size = new System.Drawing.Size(108, 17);
             this.Password.TabIndex = 20;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Password.UseSystemPasswordChar = true;
@@ -108,10 +105,11 @@
             this.login_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.login_button.FlatAppearance.BorderSize = 0;
             this.login_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_button.ForeColor = System.Drawing.Color.Gold;
-            this.login_button.Location = new System.Drawing.Point(55, 358);
+            this.login_button.Location = new System.Drawing.Point(47, 388);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(132, 49);
+            this.login_button.Size = new System.Drawing.Size(113, 53);
             this.login_button.TabIndex = 21;
             this.login_button.Text = "Log In";
             this.login_button.UseVisualStyleBackColor = true;
@@ -125,10 +123,11 @@
             this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.exit_button.FlatAppearance.BorderSize = 0;
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.Gold;
-            this.exit_button.Location = new System.Drawing.Point(457, 358);
+            this.exit_button.Location = new System.Drawing.Point(392, 388);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(126, 49);
+            this.exit_button.Size = new System.Drawing.Size(117, 53);
             this.exit_button.TabIndex = 22;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = true;
@@ -142,10 +141,11 @@
             this.signup_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.signup_button.FlatAppearance.BorderSize = 0;
             this.signup_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signup_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_button.ForeColor = System.Drawing.Color.Gold;
-            this.signup_button.Location = new System.Drawing.Point(262, 358);
+            this.signup_button.Location = new System.Drawing.Point(225, 388);
             this.signup_button.Name = "signup_button";
-            this.signup_button.Size = new System.Drawing.Size(132, 49);
+            this.signup_button.Size = new System.Drawing.Size(113, 53);
             this.signup_button.TabIndex = 23;
             this.signup_button.Text = "Sign Up";
             this.signup_button.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@
             // welcome_screen
             // 
             this.AcceptButton = this.login_button;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 475);
+            this.ClientSize = new System.Drawing.Size(572, 515);
             this.Controls.Add(this.signup_button);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.login_button);

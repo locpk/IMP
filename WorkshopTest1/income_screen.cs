@@ -22,9 +22,9 @@ namespace WorkshopTest1
 
         private void income_screen_Load(object sender, EventArgs e)
         {
-            this.monthly_DS.Clear();
-            // TODO: This line of code loads data into the 'monthly_DS.Table' table. You can move, or remove it, as needed.
-            this.tableTableAdapter.Fill(this.monthly_DS.Table);
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB' table. You can move, or remove it, as needed.
+            this.monthlyDBTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB);
+            
             
 
            
@@ -32,17 +32,22 @@ namespace WorkshopTest1
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            
+
             
 
+            
+ 
+
+           
+            
 
             //back to Menu
             Confirm_Box new_Confirm_Box = new Confirm_Box();
             DialogResult result = new_Confirm_Box.Show("Are you sure?");
             if (result == DialogResult.OK)
             {
-               
-                
+
+                this.monthlyDBTableAdapter.Insert(UN, "Income", amount_picker.Value, save_date.Value.ToShortDateString());
                 
                
                 
@@ -86,6 +91,14 @@ namespace WorkshopTest1
                     return;
                 }
             }
+        }
+
+        private void monthlyDBBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.monthlyDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.monthly_reportDBDataSet);
+
         }
 
       

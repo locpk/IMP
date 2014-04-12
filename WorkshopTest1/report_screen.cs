@@ -21,10 +21,10 @@ namespace WorkshopTest1
 
         private void report_screen_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB' table. You can move, or remove it, as needed.
+            this.monthlyDBTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB);
             
-            // TODO: This line of code loads data into the 'monthly_DS.Table' table. You can move, or remove it, as needed.
-            
-            this.TableTableAdapter.FillBy(this.monthly_DS.Table,UN);
+          
            
             this.reportViewer1.RefreshReport();
         }
@@ -37,7 +37,7 @@ namespace WorkshopTest1
                 if (frm is Menu)
                 {
                     frm.Show();
-                    this.monthly_DS.Clear();
+
                     this.Close();
                     return;
                 }

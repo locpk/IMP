@@ -31,35 +31,15 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.TableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monthly_DS = new WorkshopTest1.monthly_DS();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.exit_button = new System.Windows.Forms.Button();
-            this.TableTableAdapter = new WorkshopTest1.monthly_DSTableAdapters.TableTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.monthly_reportDBDataSet = new WorkshopTest1.monthly_reportDBDataSet();
+            this.monthlyDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthlyDBTableAdapter = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthly_DS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TableBindingSource
-            // 
-            this.TableBindingSource.DataMember = "Table";
-            this.TableBindingSource.DataSource = this.monthly_DS;
-            // 
-            // monthly_DS
-            // 
-            this.monthly_DS.DataSetName = "monthly_DS";
-            this.monthly_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.BackColor = System.Drawing.SystemColors.ControlDark;
-            reportDataSource1.Name = "report_set";
-            reportDataSource1.Value = this.TableBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WorkshopTest1.Report2.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(688, 623);
-            this.reportViewer1.TabIndex = 0;
             // 
             // exit_button
             // 
@@ -71,30 +51,53 @@
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Poor Richard", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.Gold;
-            this.exit_button.Location = new System.Drawing.Point(293, 657);
+            this.exit_button.Location = new System.Drawing.Point(251, 712);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(120, 44);
+            this.exit_button.Size = new System.Drawing.Size(103, 48);
             this.exit_button.TabIndex = 38;
             this.exit_button.Text = "Return";
             this.exit_button.UseVisualStyleBackColor = true;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
-            // TableTableAdapter
+            // reportViewer1
             // 
-            this.TableTableAdapter.ClearBeforeFill = true;
+            this.reportViewer1.BackColor = System.Drawing.SystemColors.ControlDark;
+            reportDataSource1.Name = "report";
+            reportDataSource1.Value = this.monthlyDBBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WorkshopTest1.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(10, 13);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(590, 675);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // monthly_reportDBDataSet
+            // 
+            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
+            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monthlyDBBindingSource
+            // 
+            this.monthlyDBBindingSource.DataMember = "monthlyDB";
+            this.monthlyDBBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthlyDBTableAdapter
+            // 
+            this.monthlyDBTableAdapter.ClearBeforeFill = true;
             // 
             // report_screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 727);
+            this.ClientSize = new System.Drawing.Size(619, 788);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.reportViewer1);
             this.Name = "report_screen";
             this.Text = "report_screen";
             this.Load += new System.EventHandler(this.report_screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthly_DS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,7 +107,9 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button exit_button;
         private System.Windows.Forms.BindingSource TableBindingSource;
-        private monthly_DS monthly_DS;
-        private monthly_DSTableAdapters.TableTableAdapter TableTableAdapter;
+        private System.Windows.Forms.BindingSource monthlyDBBindingSource;
+        private monthly_reportDBDataSet monthly_reportDBDataSet;
+        private monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter monthlyDBTableAdapter;
+        
     }
 }

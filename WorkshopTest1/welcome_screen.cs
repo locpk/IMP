@@ -57,24 +57,27 @@ namespace WorkshopTest1
             XmlDocument doc = new XmlDocument();
 
             // Load an XML file into the XmlDocument object. 
-            doc.Load("info.xml");
-            XmlElement root = doc.DocumentElement;
-            XmlNodeList nameList = root.GetElementsByTagName("Username");
-            IEnumerator Nenum = nameList.GetEnumerator();
-            while (Nenum.MoveNext())
+            if (File.Exists("info.xml"))
             {
-                XmlNode username = (XmlNode)Nenum.Current;
-
-                if (username.InnerText.Equals(usernamebox.Text))
+                doc.Load("info.xml");
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList nameList = root.GetElementsByTagName("Username");
+                IEnumerator Nenum = nameList.GetEnumerator();
+                while (Nenum.MoveNext())
                 {
-                    if (username.SelectSingleNode("@Password").Value == GetHashString(Password.Text))
+                    XmlNode username = (XmlNode)Nenum.Current;
+
+                    if (username.InnerText.Equals(usernamebox.Text))
                     {
-                        this.Hide();
-                        Form menu = new Menu(usernamebox.Text);
-                        menu.Show();
-                        usernamebox.Text = null;
-                        Password.Text = null;
-                        return;
+                        if (username.SelectSingleNode("@Password").Value == GetHashString(Password.Text))
+                        {
+                            this.Hide();
+                            Form menu = new Menu(usernamebox.Text);
+                            menu.Show();
+                            usernamebox.Text = null;
+                            Password.Text = null;
+                            return;
+                        }
                     }
                 }
             }
