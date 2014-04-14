@@ -56,7 +56,9 @@ namespace WorkshopTest1
 
         private void expense_button_Click(object sender, EventArgs e)
         {
-
+            Form expense = new expense_screen(UN);
+            expense.Show();
+            this.Hide();
         }
     }
 }

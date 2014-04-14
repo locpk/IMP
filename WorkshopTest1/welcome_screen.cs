@@ -83,6 +83,8 @@ namespace WorkshopTest1
                 }
                 Confirm_Box new_Confirm_Box = new Confirm_Box();
                 DialogResult result = new_Confirm_Box.Show("Username or Password May be wrong!");
+                usernamebox.Text = null;
+                Password.Text = null;
             }
         }
 
