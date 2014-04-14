@@ -30,7 +30,7 @@ namespace WorkshopTest1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = usernamebox;
+            this.ActiveControl = cancel_button;
         }
 
        
@@ -41,7 +41,7 @@ namespace WorkshopTest1
 
             if (string.IsNullOrEmpty(this.Password.Text))
             {
-                this.errorProvider5.SetError(this.Password, "Must have an Uppercase letter");
+                this.errorProvider1.SetError(this.Password, "Must have an Uppercase letter");
                 return;
             }
 
@@ -50,7 +50,7 @@ namespace WorkshopTest1
             {
 
                 messagebox.Show("You need to choose gender!");
-                errorProvider7.SetError(this.femalebutton,"You need to choose gender!");
+                errorProvider1.SetError(this.femalebutton,"You need to choose gender!");
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace WorkshopTest1
 
                 
                 XmlAttribute pwd = doc.CreateAttribute("Password");
-                pwd.Value = GetHashString(Password.Text);
+                pwd.Value = GetHashString(Password.Text + "440");
                 nodeUName.Attributes.Append(pwd);
 
                 
@@ -150,7 +150,7 @@ namespace WorkshopTest1
                   gender=malebutton.Text;
                 else
                   gender=femalebutton.Text;
-                createNode(usernamebox.Text, First_name.Text, Last_name.Text, phone_selector.Text + Phone_number.Text, GetHashString(Password.Text), Email.Text, birthday.SelectionEnd.ToShortDateString(), gender, writer);
+                createNode(usernamebox.Text, First_name.Text, Last_name.Text, phone_selector.Text + Phone_number.Text, GetHashString(Password.Text + "440"), Email.Text, birthday.SelectionEnd.ToShortDateString(), gender, writer);
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
                 writer.Close();
@@ -222,12 +222,12 @@ namespace WorkshopTest1
             if (string.IsNullOrEmpty(this.Phone_number.Text))
             {
                 
-                this.errorProvider3.SetError(this.Phone_number, "You must provide your phone number!");
+                this.errorProvider1.SetError(this.Phone_number, "You must provide your phone number!");
             }
             else if (!Regex.IsMatch(Phone_number.Text, @"^[0-9]"))
             {
                 
-                this.errorProvider3.SetError(this.Phone_number, "Phone number can only be numbers");
+                this.errorProvider1.SetError(this.Phone_number, "Phone number can only be numbers");
                 messagebox.Show("Phone number can only be numbers");
             }
             
@@ -253,7 +253,7 @@ namespace WorkshopTest1
 
                     if (username.InnerText.Equals(usernamebox.Text))
                     {
-                        this.errorProvider8.SetError(this.usernamebox, "The user is existed!");
+                        this.errorProvider1.SetError(this.usernamebox, "The user is existed!");
                         cancel = true;
                     }
                 }
@@ -263,24 +263,24 @@ namespace WorkshopTest1
             {
                 //This control fails validation: Name cannot be empty.
                 cancel = true;
-                this.errorProvider8.SetError(this.usernamebox, "You must provide a Username!");
+                this.errorProvider1.SetError(this.usernamebox, "You must provide a Username!");
             }
             else if (string.IsNullOrWhiteSpace(usernamebox.Text))
             {
                 cancel = true;
-                this.errorProvider8.SetError(this.usernamebox, "You must provide your first name!");
+                this.errorProvider1.SetError(this.usernamebox, "You must provide your first name!");
             }
             else if (!Regex.IsMatch(usernamebox.Text, @"^[a-zA-Z0-9]"))
             {
                 cancel = true;
-                this.errorProvider8.SetError(this.usernamebox, "Username can only combined by letters and numbers");
+                this.errorProvider1.SetError(this.usernamebox, "Username can only combined by letters and numbers");
             }
             e.Cancel = cancel;
         }
 
         private void usernamebox_Validated(object sender, EventArgs e)
         {
-            this.errorProvider8.SetError(this.usernamebox, string.Empty);
+            this.errorProvider1.SetError(this.usernamebox, string.Empty);
         }
 
         private void First_name_Validating(object sender, CancelEventArgs e)
@@ -318,24 +318,24 @@ namespace WorkshopTest1
             {
                 //This control fails validation: Name cannot be empty.
                 cancel = true;
-                this.errorProvider2.SetError(this.Last_name, "You must provide your Last name!");
+                this.errorProvider1.SetError(this.Last_name, "You must provide your Last name!");
             }
             else if (string.IsNullOrWhiteSpace(Last_name.Text))
             {
                 cancel = true;
-                this.errorProvider2.SetError(this.Last_name, "You must provide your Last name!");
+                this.errorProvider1.SetError(this.Last_name, "You must provide your Last name!");
             }
             else if (!Regex.IsMatch(Last_name.Text, @"^[a-zA-Z]"))
             {
                 cancel = true;
-                this.errorProvider2.SetError(this.Last_name, "Name can only be letters");
+                this.errorProvider1.SetError(this.Last_name, "Name can only be letters");
             }
             e.Cancel = cancel;
         }
 
         private void Last_name_Validated(object sender, EventArgs e)
         {
-            this.errorProvider2.SetError(this.Last_name, string.Empty);
+            this.errorProvider1.SetError(this.Last_name, string.Empty);
         }
 
         private void Email_Validating(object sender, CancelEventArgs e)
@@ -349,14 +349,14 @@ namespace WorkshopTest1
             catch (FormatException)
             {
                 cancel = true;
-                this.errorProvider4.SetError(this.Email, "Email Address invalided");
+                this.errorProvider1.SetError(this.Email, "Email Address invalided");
             }
             e.Cancel = cancel;
         }
 
         private void Email_Validated(object sender, EventArgs e)
         {
-            this.errorProvider4.SetError(this.Email, string.Empty);
+            this.errorProvider1.SetError(this.Email, string.Empty);
         }
 
         private void Password_Validating(object sender, CancelEventArgs e)
@@ -365,14 +365,14 @@ namespace WorkshopTest1
             if (!Regex.IsMatch(Password.Text, @"[A-Z]"))
             {
                 cancel = true;
-                this.errorProvider5.SetError(this.Password, "Must have an Uppercase letter");
+                this.errorProvider1.SetError(this.Password, "Must have an Uppercase letter");
             }
             e.Cancel = cancel;
         }
 
         private void Password_Validated(object sender, EventArgs e)
         {
-            this.errorProvider5.SetError(this.Email, string.Empty);
+            this.errorProvider1.SetError(this.Email, string.Empty);
         }
 
 
@@ -389,6 +389,7 @@ namespace WorkshopTest1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             this.Close();
 
             foreach (Form frm in Application.OpenForms)
@@ -401,10 +402,9 @@ namespace WorkshopTest1
             }
         }
 
-        private void usernamebox_Leave(object sender, EventArgs e)
-        {
+        
 
-        }
+
 
         
     }

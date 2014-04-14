@@ -28,7 +28,7 @@ namespace WorkshopTest1
 
         private void welcome_screen_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = usernamebox;
         }
 
         private void exit_button_Click(object sender, EventArgs e)
@@ -55,11 +55,11 @@ namespace WorkshopTest1
         {
             //create new instance of XmlDocument
             XmlDocument doc = new XmlDocument();
-
+            string filename = "info.xml";
             // Load an XML file into the XmlDocument object. 
-            if (File.Exists("info.xml"))
+            if (File.Exists(filename))
             {
-                doc.Load("info.xml");
+                doc.Load(filename);
                 XmlElement root = doc.DocumentElement;
                 XmlNodeList nameList = root.GetElementsByTagName("Username");
                 IEnumerator Nenum = nameList.GetEnumerator();
@@ -69,17 +69,20 @@ namespace WorkshopTest1
 
                     if (username.InnerText.Equals(usernamebox.Text))
                     {
-                        if (username.SelectSingleNode("@Password").Value == GetHashString(Password.Text))
+                        if (username.SelectSingleNode("@Password").Value == GetHashString(Password.Text + "440"))
                         {
                             this.Hide();
                             Form menu = new Menu(usernamebox.Text);
-                            menu.Show();
                             usernamebox.Text = null;
                             Password.Text = null;
+                            menu.Show();
                             return;
                         }
                     }
+                    
                 }
+                Confirm_Box new_Confirm_Box = new Confirm_Box();
+                DialogResult result = new_Confirm_Box.Show("Username or Password May be wrong!");
             }
         }
 
@@ -101,6 +104,11 @@ namespace WorkshopTest1
         }
 
         private void usernamebox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

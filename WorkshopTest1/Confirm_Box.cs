@@ -27,6 +27,16 @@ namespace WorkshopTest1
             message.Text = text;
             return this.ShowDialog();
         }
+
+        private void no_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ok_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

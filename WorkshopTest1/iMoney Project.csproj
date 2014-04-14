@@ -101,6 +101,10 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="monthly_reportDBDataSet.cs">
+      <DependentUpon>monthly_reportDBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="monthly_reportDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,7 +188,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cancel %281%29.png" />
+    <Content Include="cancel %282%29.png" />
+    <Content Include="cancel.png" />
+    <Content Include="check.png" />
+    <Content Include="checkmark %281%29.png" />
+    <Content Include="checkmark.png" />
+    <Content Include="close.ico" />
+    <Content Include="close.png" />
+    <Content Include="confirm.ico" />
+    <Content Include="confirm.png" />
+    <Content Include="currency_dollar_yellow.ico" />
+    <Content Include="emblem_money.ico" />
     <Content Include="exclamation5.ico" />
+    <Content Include="foobar.ico" />
+    <Content Include="go_previous_black.png" />
+    <Content Include="graph.ico" />
+    <Content Include="id.ico" />
     <Content Include="monthly_reportDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

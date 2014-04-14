@@ -24,7 +24,8 @@ namespace WorkshopTest1
         {
             // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB' table. You can move, or remove it, as needed.
             this.monthlyDBTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB);
-            
+           
+
             
 
            
@@ -47,7 +48,7 @@ namespace WorkshopTest1
             if (result == DialogResult.OK)
             {
 
-                this.monthlyDBTableAdapter.Insert(UN, "Income", amount_picker.Value, save_date.Value.ToShortDateString());
+                this.monthlyDBTableAdapter.InsertARow(UN, "Income", amount_picker.Value, save_date.Value);
                 
                
                 

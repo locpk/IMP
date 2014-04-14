@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.income_button = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -52,6 +53,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -81,7 +83,7 @@
             this.income_button.Location = new System.Drawing.Point(0, 0);
             this.income_button.Name = "income_button";
             this.income_button.Size = new System.Drawing.Size(136, 515);
-            this.income_button.TabIndex = 12;
+            this.income_button.TabIndex = 1;
             this.income_button.Text = "Income";
             this.income_button.UseVisualStyleBackColor = true;
             this.income_button.Click += new System.EventHandler(this.income_button_Click);
@@ -89,6 +91,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -118,7 +121,7 @@
             this.expense_button.Location = new System.Drawing.Point(0, 0);
             this.expense_button.Name = "expense_button";
             this.expense_button.Size = new System.Drawing.Size(141, 515);
-            this.expense_button.TabIndex = 13;
+            this.expense_button.TabIndex = 2;
             this.expense_button.Text = "Expense";
             this.expense_button.UseVisualStyleBackColor = true;
             this.expense_button.Click += new System.EventHandler(this.expense_button_Click);
@@ -126,6 +129,7 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             // 
@@ -155,7 +159,7 @@
             this.report_button.Location = new System.Drawing.Point(0, 0);
             this.report_button.Name = "report_button";
             this.report_button.Size = new System.Drawing.Size(140, 515);
-            this.report_button.TabIndex = 14;
+            this.report_button.TabIndex = 3;
             this.report_button.Text = "Report";
             this.report_button.UseVisualStyleBackColor = true;
             this.report_button.Click += new System.EventHandler(this.report_button_Click);
@@ -174,18 +178,19 @@
             this.logout_button.Location = new System.Drawing.Point(0, 0);
             this.logout_button.Name = "logout_button";
             this.logout_button.Size = new System.Drawing.Size(141, 515);
-            this.logout_button.TabIndex = 14;
+            this.logout_button.TabIndex = 4;
             this.logout_button.Text = "Log Out";
             this.logout_button.UseVisualStyleBackColor = true;
             this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(567, 515);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

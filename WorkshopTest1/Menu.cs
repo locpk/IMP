@@ -33,7 +33,7 @@ namespace WorkshopTest1
                 if (frm is welcome_screen)
                 {
                     frm.Show();
-                    return;
+                   
                 }
             }
         }
