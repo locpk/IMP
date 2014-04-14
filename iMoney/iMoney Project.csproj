@@ -151,7 +151,6 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="register_screen.resx">
       <DependentUpon>register_screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,16 +196,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cancel %281%29.png" />
-    <Content Include="cancel %282%29.png" />
     <Content Include="cancel.png" />
     <Content Include="check.png" />
-    <Content Include="checkmark %281%29.png" />
-    <Content Include="checkmark.png" />
-    <Content Include="close.ico" />
-    <Content Include="close.png" />
-    <Content Include="confirm.ico" />
-    <Content Include="confirm.png" />
     <Content Include="currency_dollar_yellow.ico" />
     <Content Include="emblem_money.ico" />
     <Content Include="exclamation5.ico" />

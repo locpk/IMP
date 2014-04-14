@@ -65,7 +65,7 @@
             this.ok_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ok_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ok_button.Image = ((System.Drawing.Image)(resources.GetObject("ok_button.Image")));
-            this.ok_button.Location = new System.Drawing.Point(59, 152);
+            this.ok_button.Location = new System.Drawing.Point(74, 152);
             this.ok_button.Name = "ok_button";
             this.ok_button.Size = new System.Drawing.Size(64, 55);
             this.ok_button.TabIndex = 1;
@@ -78,16 +78,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.message.AutoSize = true;
             this.message.Cursor = System.Windows.Forms.Cursors.No;
-            this.message.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.message.Location = new System.Drawing.Point(44, 86);
             this.message.Name = "message";
-            this.message.Size = new System.Drawing.Size(0, 22);
+            this.message.Size = new System.Drawing.Size(0, 24);
             this.message.TabIndex = 0;
             this.message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Confirm_Box
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 232);
             this.Controls.Add(this.no_button);

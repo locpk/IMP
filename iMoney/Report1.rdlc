@@ -37,6 +37,8 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -220,11 +222,9 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
-            <ChartThreeDProperties>
-              <Enabled>true</Enabled>
-            </ChartThreeDProperties>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundGradientType>LeftRight</BackgroundGradientType>
+              <BackgroundHatchType>None</BackgroundHatchType>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -257,7 +257,7 @@
             </Style>
           </ChartTitle>
         </ChartTitles>
-        <Palette>BrightPastel</Palette>
+        <Palette>GrayScale</Palette>
         <ChartBorderSkin>
           <Style>
             <BackgroundColor>Gray</BackgroundColor>
@@ -287,7 +287,7 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Tablix Name="Tablix3">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -502,7 +502,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!amount.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                                <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -532,7 +535,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!date.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>d</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -574,11 +579,16 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
+        <FixedRowHeaders>true</FixedRowHeaders>
+        <KeepTogether>true</KeepTogether>
         <DataSetName>report</DataSetName>
         <Top>0.40625in</Top>
         <Left>0.69792in</Left>
         <Height>1.64458in</Height>
-        <Width>7.29042in</Width>
+        <Width>7.2904in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
