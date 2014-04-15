@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorkshopTest1.Properties {
+namespace iMoney.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

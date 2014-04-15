@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkshopTest1
+namespace iMoney
 {
-    public partial class report_screen : WorkshopTest1.BaseForm
+    public partial class report_screen : iMoney.BaseForm
     {
         string UN;
         public report_screen(string username)
@@ -21,8 +21,13 @@ namespace WorkshopTest1
 
         private void report_screen_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB' table. You can move, or remove it, as needed.
-            this.monthlyDBTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB);
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_Ex' table. You can move, or remove it, as needed.
+            this.monthlyDB_ExTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_Ex);
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
+            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In);
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
+            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In);
+            
             
           
            

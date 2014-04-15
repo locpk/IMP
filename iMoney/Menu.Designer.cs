@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class Menu
     {

@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class welcome_screen
     {
@@ -126,9 +126,9 @@
             this.label3.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(325, 226);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 22);
+            this.label3.Size = new System.Drawing.Size(81, 22);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Password";
+            this.label3.Text = "Passcode";
             // 
             // label2
             // 

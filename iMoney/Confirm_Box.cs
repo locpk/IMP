@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkshopTest1
+namespace iMoney
 {
-    public partial class Confirm_Box : WorkshopTest1.BaseForm
+    public partial class Confirm_Box : iMoney.BaseForm
     {
         public Confirm_Box()
         {

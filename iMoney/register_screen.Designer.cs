@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class register_screen
     {
@@ -52,6 +52,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cancel_button = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(190, 68);
+            this.label1.Location = new System.Drawing.Point(188, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 19);
             this.label1.TabIndex = 0;
@@ -71,7 +72,7 @@
             this.First_name.BackColor = System.Drawing.SystemColors.ControlDark;
             this.First_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.First_name.ForeColor = System.Drawing.Color.Gold;
-            this.First_name.Location = new System.Drawing.Point(311, 69);
+            this.First_name.Location = new System.Drawing.Point(309, 105);
             this.First_name.MaxLength = 10;
             this.First_name.Name = "First_name";
             this.First_name.Size = new System.Drawing.Size(116, 13);
@@ -85,7 +86,7 @@
             this.Last_name.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Last_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Last_name.ForeColor = System.Drawing.Color.Gold;
-            this.Last_name.Location = new System.Drawing.Point(311, 109);
+            this.Last_name.Location = new System.Drawing.Point(309, 145);
             this.Last_name.MaxLength = 10;
             this.Last_name.Name = "Last_name";
             this.Last_name.Size = new System.Drawing.Size(116, 13);
@@ -98,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(190, 108);
+            this.label2.Location = new System.Drawing.Point(188, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 2;
@@ -109,7 +110,7 @@
             this.Phone_number.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Phone_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Phone_number.ForeColor = System.Drawing.Color.Gold;
-            this.Phone_number.Location = new System.Drawing.Point(411, 144);
+            this.Phone_number.Location = new System.Drawing.Point(409, 180);
             this.Phone_number.MaxLength = 11;
             this.Phone_number.Name = "Phone_number";
             this.Phone_number.Size = new System.Drawing.Size(116, 13);
@@ -121,7 +122,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(190, 148);
+            this.label3.Location = new System.Drawing.Point(188, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 4;
@@ -132,7 +133,7 @@
             this.Email.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Email.ForeColor = System.Drawing.Color.Gold;
-            this.Email.Location = new System.Drawing.Point(311, 182);
+            this.Email.Location = new System.Drawing.Point(309, 218);
             this.Email.MaxLength = 20;
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(116, 13);
@@ -145,7 +146,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(190, 181);
+            this.label4.Location = new System.Drawing.Point(188, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 19);
             this.label4.TabIndex = 6;
@@ -155,7 +156,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(190, 271);
+            this.label5.Location = new System.Drawing.Point(188, 307);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 19);
             this.label5.TabIndex = 8;
@@ -165,7 +166,7 @@
             // 
             this.birthday.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.birthday.ForeColor = System.Drawing.Color.Gold;
-            this.birthday.Location = new System.Drawing.Point(311, 265);
+            this.birthday.Location = new System.Drawing.Point(309, 301);
             this.birthday.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.birthday.Name = "birthday";
             this.birthday.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(1980, 1, 1, 0, 0, 0, 0), new System.DateTime(1980, 1, 7, 0, 0, 0, 0));
@@ -183,7 +184,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Gold;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(227, 451);
+            this.button1.Location = new System.Drawing.Point(225, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 57);
             this.button1.TabIndex = 11;
@@ -194,7 +195,7 @@
             // 
             this.malebutton.AutoSize = true;
             this.malebutton.Font = new System.Drawing.Font("Poor Richard", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.malebutton.Location = new System.Drawing.Point(311, 238);
+            this.malebutton.Location = new System.Drawing.Point(309, 274);
             this.malebutton.Name = "malebutton";
             this.malebutton.Size = new System.Drawing.Size(59, 22);
             this.malebutton.TabIndex = 8;
@@ -206,7 +207,7 @@
             // 
             this.femalebutton.AutoSize = true;
             this.femalebutton.Font = new System.Drawing.Font("Poor Richard", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femalebutton.Location = new System.Drawing.Point(411, 238);
+            this.femalebutton.Location = new System.Drawing.Point(409, 274);
             this.femalebutton.Name = "femalebutton";
             this.femalebutton.Size = new System.Drawing.Size(74, 22);
             this.femalebutton.TabIndex = 9;
@@ -218,7 +219,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(190, 210);
+            this.label6.Location = new System.Drawing.Point(188, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 19);
             this.label6.TabIndex = 14;
@@ -229,7 +230,7 @@
             this.Password.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Password.ForeColor = System.Drawing.Color.Gold;
-            this.Password.Location = new System.Drawing.Point(311, 211);
+            this.Password.Location = new System.Drawing.Point(309, 247);
             this.Password.MaxLength = 20;
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(116, 13);
@@ -248,7 +249,7 @@
             this.phone_selector.Items.AddRange(new object[] {
             "US +1",
             "CN +86"});
-            this.phone_selector.Location = new System.Drawing.Point(311, 141);
+            this.phone_selector.Location = new System.Drawing.Point(309, 177);
             this.phone_selector.Name = "phone_selector";
             this.phone_selector.Size = new System.Drawing.Size(75, 20);
             this.phone_selector.TabIndex = 4;
@@ -258,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(190, 33);
+            this.label7.Location = new System.Drawing.Point(188, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 19);
             this.label7.TabIndex = 17;
@@ -269,7 +270,7 @@
             this.usernamebox.BackColor = System.Drawing.SystemColors.ControlDark;
             this.usernamebox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usernamebox.ForeColor = System.Drawing.Color.Gold;
-            this.usernamebox.Location = new System.Drawing.Point(311, 34);
+            this.usernamebox.Location = new System.Drawing.Point(309, 70);
             this.usernamebox.MaxLength = 10;
             this.usernamebox.Name = "usernamebox";
             this.usernamebox.Size = new System.Drawing.Size(116, 13);
@@ -283,7 +284,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(191, 238);
+            this.label8.Location = new System.Drawing.Point(189, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 19);
             this.label8.TabIndex = 19;
@@ -312,12 +313,22 @@
             this.cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_button.ForeColor = System.Drawing.Color.Gold;
             this.cancel_button.Image = ((System.Drawing.Image)(resources.GetObject("cancel_button.Image")));
-            this.cancel_button.Location = new System.Drawing.Point(463, 451);
+            this.cancel_button.Location = new System.Drawing.Point(461, 487);
             this.cancel_button.Name = "cancel_button";
             this.cancel_button.Size = new System.Drawing.Size(64, 57);
             this.cancel_button.TabIndex = 12;
             this.cancel_button.UseVisualStyleBackColor = false;
             this.cancel_button.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Harlow Solid Italic", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 36);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Sign Up";
             // 
             // register_screen
             // 
@@ -327,8 +338,9 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CancelButton = this.cancel_button;
-            this.ClientSize = new System.Drawing.Size(747, 555);
+            this.ClientSize = new System.Drawing.Size(747, 589);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.usernamebox);
@@ -392,6 +404,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Label label9;
     }
 }
 

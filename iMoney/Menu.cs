@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkshopTest1
+namespace iMoney
 {
-    public partial class Menu : WorkshopTest1.BaseForm
+    public partial class Menu : iMoney.BaseForm
     {
         string UN;
         public Menu(string username)

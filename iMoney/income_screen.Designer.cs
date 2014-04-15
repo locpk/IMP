@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class income_screen
     {
@@ -42,14 +42,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.amount_picker = new System.Windows.Forms.NumericUpDown();
-            this.monthly_reportDBDataSet = new WorkshopTest1.monthly_reportDBDataSet();
-            this.monthlyDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monthlyDBTableAdapter = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter();
-            this.tableAdapterManager = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
             this.label4 = new System.Windows.Forms.Label();
+            this.monthly_reportDBDataSet = new iMoney.monthly_reportDBDataSet();
+            this.monthlyDB_InBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthlyDB_InTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter();
+            this.tableAdapterManager = new iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_InBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -188,26 +188,6 @@
             this.amount_picker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.amount_picker.ThousandsSeparator = true;
             // 
-            // monthly_reportDBDataSet
-            // 
-            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
-            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // monthlyDBBindingSource
-            // 
-            this.monthlyDBBindingSource.DataMember = "monthlyDB";
-            this.monthlyDBBindingSource.DataSource = this.monthly_reportDBDataSet;
-            // 
-            // monthlyDBTableAdapter
-            // 
-            this.monthlyDBTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.monthlyDBTableAdapter = this.monthlyDBTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -218,11 +198,32 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Income";
             // 
+            // monthly_reportDBDataSet
+            // 
+            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
+            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monthlyDB_InBindingSource
+            // 
+            this.monthlyDB_InBindingSource.DataMember = "monthlyDB_In";
+            this.monthlyDB_InBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthlyDB_InTableAdapter
+            // 
+            this.monthlyDB_InTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.monthlyDB_InTableAdapter = this.monthlyDB_InTableAdapter;
+            this.tableAdapterManager.monthlyDB_InTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // income_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 543);
+            this.ClientSize = new System.Drawing.Size(464, 539);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.save_date);
@@ -237,7 +238,7 @@
             this.Load += new System.EventHandler(this.income_screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_InBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,11 +259,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown amount_picker;
-        private monthly_reportDBDataSet monthly_reportDBDataSet;
-        private System.Windows.Forms.BindingSource monthlyDBBindingSource;
-        private monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter monthlyDBTableAdapter;
-        private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label4;
+        private monthly_reportDBDataSet monthly_reportDBDataSet;
+        private System.Windows.Forms.BindingSource monthlyDB_InBindingSource;
+        private monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter monthlyDB_InTableAdapter;
+        private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         
     }
 }

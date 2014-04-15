@@ -1,13 +1,19 @@
-﻿namespace WorkshopTest1 {
+﻿namespace iMoney
+{
     
     
     public partial class monthly_reportDBDataSet {
+        partial class monthlyDB_InDataTable
+        {
+        }
     }
 }
 
-namespace WorkshopTest1.monthly_reportDBDataSetTableAdapters {
-    
-    
-    public partial class monthlyDBTableAdapter {
+namespace iMoney.monthly_reportDBDataSetTableAdapters
+{
+
+
+    public partial class monthlyDB_InTableAdapter
+    {
     }
 }

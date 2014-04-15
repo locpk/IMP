@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class Confirm_Box
     {
@@ -45,7 +45,7 @@
             this.no_button.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.no_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.no_button.Image = ((System.Drawing.Image)(resources.GetObject("no_button.Image")));
-            this.no_button.Location = new System.Drawing.Point(285, 152);
+            this.no_button.Location = new System.Drawing.Point(280, 178);
             this.no_button.Name = "no_button";
             this.no_button.Size = new System.Drawing.Size(68, 55);
             this.no_button.TabIndex = 2;
@@ -65,7 +65,7 @@
             this.ok_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ok_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ok_button.Image = ((System.Drawing.Image)(resources.GetObject("ok_button.Image")));
-            this.ok_button.Location = new System.Drawing.Point(74, 152);
+            this.ok_button.Location = new System.Drawing.Point(69, 178);
             this.ok_button.Name = "ok_button";
             this.ok_button.Size = new System.Drawing.Size(64, 55);
             this.ok_button.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.message.AutoSize = true;
             this.message.Cursor = System.Windows.Forms.Cursors.No;
             this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.message.Location = new System.Drawing.Point(44, 86);
+            this.message.Location = new System.Drawing.Point(37, 90);
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(0, 24);
             this.message.TabIndex = 0;
@@ -87,9 +87,10 @@
             // 
             // Confirm_Box
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 232);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(419, 278);
             this.Controls.Add(this.no_button);
             this.Controls.Add(this.ok_button);
             this.Controls.Add(this.message);

@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class expense_screen
     {
@@ -37,13 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.amount_picker = new System.Windows.Forms.NumericUpDown();
-            this.monthly_reportDBDataSet = new WorkshopTest1.monthly_reportDBDataSet();
-            this.monthlyDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monthlyDBTableAdapter = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter();
-            this.tableAdapterManager = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
+            this.monthly_reportDBDataSet = new iMoney.monthly_reportDBDataSet();
+            this.monthlyDB_ExBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthlyDB_ExTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter();
+            this.tableAdapterManager = new iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_ExBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -160,26 +160,27 @@
             this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
             this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // monthlyDBBindingSource
+            // monthlyDB_ExBindingSource
             // 
-            this.monthlyDBBindingSource.DataMember = "monthlyDB";
-            this.monthlyDBBindingSource.DataSource = this.monthly_reportDBDataSet;
+            this.monthlyDB_ExBindingSource.DataMember = "monthlyDB_Ex";
+            this.monthlyDB_ExBindingSource.DataSource = this.monthly_reportDBDataSet;
             // 
-            // monthlyDBTableAdapter
+            // monthlyDB_ExTableAdapter
             // 
-            this.monthlyDBTableAdapter.ClearBeforeFill = true;
+            this.monthlyDB_ExTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.monthlyDBTableAdapter = this.monthlyDBTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WorkshopTest1.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.monthlyDB_ExTableAdapter = this.monthlyDB_ExTableAdapter;
+            this.tableAdapterManager.monthlyDB_InTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // expense_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 601);
+            this.ClientSize = new System.Drawing.Size(464, 539);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.save_date);
@@ -193,7 +194,7 @@
             this.Load += new System.EventHandler(this.expense_screen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_ExBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,8 +211,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown amount_picker;
         private monthly_reportDBDataSet monthly_reportDBDataSet;
-        private System.Windows.Forms.BindingSource monthlyDBBindingSource;
-        private monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter monthlyDBTableAdapter;
+        private System.Windows.Forms.BindingSource monthlyDB_ExBindingSource;
+        private monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter monthlyDB_ExTableAdapter;
         private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

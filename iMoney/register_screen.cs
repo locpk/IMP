@@ -18,7 +18,7 @@ using System.Xml.XPath;
 using System.IO;
 using System.Collections;
 
-namespace WorkshopTest1
+namespace iMoney
 {
     public partial class register_screen : Form
     {
@@ -346,7 +346,7 @@ namespace WorkshopTest1
                 MailAddress m = new MailAddress(Email.Text);
                 
             }
-            catch (FormatException)
+            catch (FormatException fe)
             {
                 cancel = true;
                 this.errorProvider1.SetError(this.Email, "Email Address invalided");

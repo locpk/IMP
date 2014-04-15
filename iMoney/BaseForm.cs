@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkshopTest1
+namespace iMoney
 {
     public partial class BaseForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace WorkshopTest1
+﻿namespace iMoney
 {
     partial class report_screen
     {
@@ -30,27 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.monthlyDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monthly_reportDBDataSet = new WorkshopTest1.monthly_reportDBDataSet();
-            this.TableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.monthlyDBInBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthly_reportDBDataSet = new iMoney.monthly_reportDBDataSet();
+            this.monthlyDBExBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.exit_button = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.monthlyDBTableAdapter = new WorkshopTest1.monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).BeginInit();
+            this.monthlyDB_InTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter();
+            this.monthlyDB_ExTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter();
+            this.monthlyDB_InBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.monthlyDB_ExBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBInBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBExBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_InBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_ExBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // monthlyDBBindingSource
+            // monthlyDBInBindingSource
             // 
-            this.monthlyDBBindingSource.DataMember = "monthlyDB";
-            this.monthlyDBBindingSource.DataSource = this.monthly_reportDBDataSet;
+            this.monthlyDBInBindingSource.DataMember = "monthlyDB_In";
+            this.monthlyDBInBindingSource.DataSource = this.monthly_reportDBDataSet;
             // 
             // monthly_reportDBDataSet
             // 
             this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
             this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monthlyDBExBindingSource
+            // 
+            this.monthlyDBExBindingSource.DataMember = "monthlyDB_Ex";
+            this.monthlyDBExBindingSource.DataSource = this.monthly_reportDBDataSet;
             // 
             // exit_button
             // 
@@ -73,18 +84,17 @@
             // reportViewer1
             // 
             this.reportViewer1.BackColor = System.Drawing.SystemColors.ControlDark;
-            reportDataSource1.Name = "report";
-            reportDataSource1.Value = this.monthlyDBBindingSource;
+            reportDataSource1.Name = "Income";
+            reportDataSource1.Value = this.monthlyDB_InBindingSource;
+            reportDataSource2.Name = "Expense";
+            reportDataSource2.Value = this.monthlyDB_ExBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WorkshopTest1.Report1.rdlc";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "iMoney.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(2, 60);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(884, 675);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // monthlyDBTableAdapter
-            // 
-            this.monthlyDBTableAdapter.ClearBeforeFill = true;
             // 
             // label4
             // 
@@ -95,6 +105,24 @@
             this.label4.Size = new System.Drawing.Size(100, 36);
             this.label4.TabIndex = 48;
             this.label4.Text = "Report";
+            // 
+            // monthlyDB_InTableAdapter
+            // 
+            this.monthlyDB_InTableAdapter.ClearBeforeFill = true;
+            // 
+            // monthlyDB_ExTableAdapter
+            // 
+            this.monthlyDB_ExTableAdapter.ClearBeforeFill = true;
+            // 
+            // monthlyDB_InBindingSource
+            // 
+            this.monthlyDB_InBindingSource.DataMember = "monthlyDB_In";
+            this.monthlyDB_InBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthlyDB_ExBindingSource
+            // 
+            this.monthlyDB_ExBindingSource.DataMember = "monthlyDB_Ex";
+            this.monthlyDB_ExBindingSource.DataSource = this.monthly_reportDBDataSet;
             // 
             // report_screen
             // 
@@ -107,9 +135,11 @@
             this.Name = "report_screen";
             this.Text = "report_screen";
             this.Load += new System.EventHandler(this.report_screen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBInBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDBExBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_InBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_ExBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,11 +149,14 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button exit_button;
-        private System.Windows.Forms.BindingSource TableBindingSource;
-        private System.Windows.Forms.BindingSource monthlyDBBindingSource;
-        private monthly_reportDBDataSet monthly_reportDBDataSet;
-        private monthly_reportDBDataSetTableAdapters.monthlyDBTableAdapter monthlyDBTableAdapter;
         private System.Windows.Forms.Label label4;
+        private monthly_reportDBDataSet monthly_reportDBDataSet;
+        private System.Windows.Forms.BindingSource monthlyDBInBindingSource;
+        private monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter monthlyDB_InTableAdapter;
+        private System.Windows.Forms.BindingSource monthlyDBExBindingSource;
+        private monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter monthlyDB_ExTableAdapter;
+        private System.Windows.Forms.BindingSource monthlyDB_InBindingSource;
+        private System.Windows.Forms.BindingSource monthlyDB_ExBindingSource;
         
     }
 }

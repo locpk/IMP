@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WorkshopTest1
+namespace iMoney
 {
-    public partial class income_screen : WorkshopTest1.BaseForm
+    public partial class income_screen : iMoney.BaseForm
     {
         string UN;
         public income_screen(string username)
@@ -22,8 +22,9 @@ namespace WorkshopTest1
 
         private void income_screen_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB' table. You can move, or remove it, as needed.
-            this.monthlyDBTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB);
+            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
+            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In);
+
            
 
             
@@ -39,29 +40,8 @@ namespace WorkshopTest1
             DialogResult result = new_Confirm_Box.Show("Are you sure?");
             if (result == DialogResult.OK)
             {
-                this.monthlyDBTableAdapter.Insert(UN, "Income", amount_picker.Value, save_date.Value.ToShortDateString());
-                //
-                this.Close();
-                foreach (Form frm in Application.OpenForms)
-                {
-                    if (frm is Menu)
-                    {
-                        frm.Show();
-                        return;
-                    }
-                }
-            }
-            else
-            {
-                this.Close();
-                foreach (Form frm in Application.OpenForms)
-                {
-                    if (frm is Menu)
-                    {
-                        frm.Show();
-                        return;
-                    }
-                }
+                this.monthlyDB_InTableAdapter.Insert(UN, "Income", amount_picker.Value, save_date.Value.ToShortDateString());
+                amount_picker.Value = 0;
             }
         }
 
@@ -79,6 +59,8 @@ namespace WorkshopTest1
                 }
             }
         }
+
+
 
 
       
