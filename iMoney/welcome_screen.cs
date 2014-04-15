@@ -21,6 +21,8 @@ namespace iMoney
 {
     public partial class welcome_screen : iMoney.BaseForm
     {
+        
+
         public welcome_screen()
         {
             InitializeComponent();
@@ -140,4 +142,5 @@ namespace iMoney
 
         //end of hash functions
     }
+
 }

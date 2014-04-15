@@ -339,6 +339,7 @@ namespace iMoney
             this.errorProvider1.SetError(this.Last_name, string.Empty);
         }
 
+        //Email validation
         private void Email_Validating(object sender, CancelEventArgs e)
         {
             bool cancel = false;
@@ -347,7 +348,7 @@ namespace iMoney
                 MailAddress m = new MailAddress(Email.Text);
                 
             }
-            catch (FormatException fe)
+            catch (FormatException)
             {
                 cancel = true;
                 this.errorProvider1.SetError(this.Email, "Email Address invalided");
