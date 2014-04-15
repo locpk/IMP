@@ -156,9 +156,11 @@
             // welcome_screen
             // 
             this.AcceptButton = this.login_button;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 515);
+            this.AutoScroll = false;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(608, 509);
             this.Controls.Add(this.signup_button);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.login_button);

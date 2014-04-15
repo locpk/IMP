@@ -155,6 +155,7 @@ namespace iMoney
                 writer.WriteEndDocument();
                 writer.Close();
 
+                messagebox.Show("Saved successfully!");
                 //clear input fields
                 usernamebox.Text = null;
                 First_name.Text = null;
