@@ -404,6 +404,24 @@ namespace iMoney
             }
         }
 
+        private void confirmPW_Validating(object sender, CancelEventArgs e)
+        {
+
+             bool cancel = false;
+            if (confirmPW.Text != Password.Text)
+            {
+                cancel = true;
+                this.errorProvider1.SetError(this.confirmPW, "Passwords don't match!");
+            }
+            
+            e.Cancel = cancel;
+        }
+
+        private void confirmPW_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError(this.confirmPW, string.Empty);
+        }
+
         
 
 

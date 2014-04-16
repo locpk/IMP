@@ -322,6 +322,8 @@ namespace iMoney {
             
             private global::System.Data.DataColumn columndate;
             
+            private global::System.Data.DataColumn columnflow_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public monthlyDB_InDataTable() {
@@ -389,6 +391,14 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn flow_idColumn {
+                get {
+                    return this.columnflow_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -424,16 +434,28 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public monthlyDB_InRow AddmonthlyDB_InRow(string username, string type, decimal amount, string date) {
+            public monthlyDB_InRow AddmonthlyDB_InRow(string username, string type, decimal amount, System.DateTime date) {
                 monthlyDB_InRow rowmonthlyDB_InRow = ((monthlyDB_InRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         username,
                         type,
                         amount,
-                        date};
+                        date,
+                        null};
                 rowmonthlyDB_InRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmonthlyDB_InRow);
                 return rowmonthlyDB_InRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public monthlyDB_InRow FindByusernametypeamountdateflow_id(string username, string type, decimal amount, System.DateTime date, int flow_id) {
+                return ((monthlyDB_InRow)(this.Rows.Find(new object[] {
+                            username,
+                            type,
+                            amount,
+                            date,
+                            flow_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -457,6 +479,7 @@ namespace iMoney {
                 this.columntype = base.Columns["type"];
                 this.columnamount = base.Columns["amount"];
                 this.columndate = base.Columns["date"];
+                this.columnflow_id = base.Columns["flow_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -468,11 +491,27 @@ namespace iMoney {
                 base.Columns.Add(this.columntype);
                 this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamount);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
+                this.columnflow_id = new global::System.Data.DataColumn("flow_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnflow_id);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnusername,
+                                this.columntype,
+                                this.columnamount,
+                                this.columndate,
+                                this.columnflow_id}, true));
                 this.columnusername.AllowDBNull = false;
                 this.columnusername.MaxLength = 50;
+                this.columntype.AllowDBNull = false;
                 this.columntype.MaxLength = 50;
+                this.columnamount.AllowDBNull = false;
+                this.columndate.AllowDBNull = false;
+                this.columnflow_id.AutoIncrement = true;
+                this.columnflow_id.AutoIncrementSeed = -1;
+                this.columnflow_id.AutoIncrementStep = -1;
+                this.columnflow_id.AllowDBNull = false;
+                this.columnflow_id.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -614,6 +653,8 @@ namespace iMoney {
             
             private global::System.Data.DataColumn columndate;
             
+            private global::System.Data.DataColumn columnflow_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public monthlyDB_ExDataTable() {
@@ -681,6 +722,14 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn flow_idColumn {
+                get {
+                    return this.columnflow_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -716,16 +765,28 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public monthlyDB_ExRow AddmonthlyDB_ExRow(string type, string username, decimal amount, string date) {
+            public monthlyDB_ExRow AddmonthlyDB_ExRow(string type, string username, decimal amount, System.DateTime date) {
                 monthlyDB_ExRow rowmonthlyDB_ExRow = ((monthlyDB_ExRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         type,
                         username,
                         amount,
-                        date};
+                        date,
+                        null};
                 rowmonthlyDB_ExRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmonthlyDB_ExRow);
                 return rowmonthlyDB_ExRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public monthlyDB_ExRow FindByusernametypeamountdateflow_id(string username, string type, decimal amount, System.DateTime date, int flow_id) {
+                return ((monthlyDB_ExRow)(this.Rows.Find(new object[] {
+                            username,
+                            type,
+                            amount,
+                            date,
+                            flow_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -749,6 +810,7 @@ namespace iMoney {
                 this.columnusername = base.Columns["username"];
                 this.columnamount = base.Columns["amount"];
                 this.columndate = base.Columns["date"];
+                this.columnflow_id = base.Columns["flow_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -760,12 +822,27 @@ namespace iMoney {
                 base.Columns.Add(this.columnusername);
                 this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamount);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
+                this.columnflow_id = new global::System.Data.DataColumn("flow_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnflow_id);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnusername,
+                                this.columntype,
+                                this.columnamount,
+                                this.columndate,
+                                this.columnflow_id}, true));
+                this.columntype.AllowDBNull = false;
                 this.columntype.MaxLength = 50;
                 this.columnusername.AllowDBNull = false;
                 this.columnusername.MaxLength = 50;
-                this.columndate.MaxLength = 50;
+                this.columnamount.AllowDBNull = false;
+                this.columndate.AllowDBNull = false;
+                this.columnflow_id.AutoIncrement = true;
+                this.columnflow_id.AutoIncrementSeed = -1;
+                this.columnflow_id.AutoIncrementStep = -1;
+                this.columnflow_id.AllowDBNull = false;
+                this.columnflow_id.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -921,12 +998,7 @@ namespace iMoney {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string type {
                 get {
-                    try {
-                        return ((string)(this[this.tablemonthlyDB_In.typeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'type\' in table \'monthlyDB_In\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablemonthlyDB_In.typeColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_In.typeColumn] = value;
@@ -937,12 +1009,7 @@ namespace iMoney {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal amount {
                 get {
-                    try {
-                        return ((decimal)(this[this.tablemonthlyDB_In.amountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'monthlyDB_In\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tablemonthlyDB_In.amountColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_In.amountColumn] = value;
@@ -951,14 +1018,9 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string date {
+            public System.DateTime date {
                 get {
-                    try {
-                        return ((string)(this[this.tablemonthlyDB_In.dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'monthlyDB_In\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablemonthlyDB_In.dateColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_In.dateColumn] = value;
@@ -967,38 +1029,13 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IstypeNull() {
-                return this.IsNull(this.tablemonthlyDB_In.typeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SettypeNull() {
-                this[this.tablemonthlyDB_In.typeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsamountNull() {
-                return this.IsNull(this.tablemonthlyDB_In.amountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetamountNull() {
-                this[this.tablemonthlyDB_In.amountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdateNull() {
-                return this.IsNull(this.tablemonthlyDB_In.dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdateNull() {
-                this[this.tablemonthlyDB_In.dateColumn] = global::System.Convert.DBNull;
+            public int flow_id {
+                get {
+                    return ((int)(this[this.tablemonthlyDB_In.flow_idColumn]));
+                }
+                set {
+                    this[this.tablemonthlyDB_In.flow_idColumn] = value;
+                }
             }
         }
         
@@ -1020,12 +1057,7 @@ namespace iMoney {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string type {
                 get {
-                    try {
-                        return ((string)(this[this.tablemonthlyDB_Ex.typeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'type\' in table \'monthlyDB_Ex\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablemonthlyDB_Ex.typeColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_Ex.typeColumn] = value;
@@ -1047,12 +1079,7 @@ namespace iMoney {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal amount {
                 get {
-                    try {
-                        return ((decimal)(this[this.tablemonthlyDB_Ex.amountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'monthlyDB_Ex\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tablemonthlyDB_Ex.amountColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_Ex.amountColumn] = value;
@@ -1061,14 +1088,9 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string date {
+            public System.DateTime date {
                 get {
-                    try {
-                        return ((string)(this[this.tablemonthlyDB_Ex.dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'monthlyDB_Ex\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablemonthlyDB_Ex.dateColumn]));
                 }
                 set {
                     this[this.tablemonthlyDB_Ex.dateColumn] = value;
@@ -1077,38 +1099,13 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IstypeNull() {
-                return this.IsNull(this.tablemonthlyDB_Ex.typeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SettypeNull() {
-                this[this.tablemonthlyDB_Ex.typeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsamountNull() {
-                return this.IsNull(this.tablemonthlyDB_Ex.amountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetamountNull() {
-                this[this.tablemonthlyDB_Ex.amountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdateNull() {
-                return this.IsNull(this.tablemonthlyDB_Ex.dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdateNull() {
-                this[this.tablemonthlyDB_Ex.dateColumn] = global::System.Convert.DBNull;
+            public int flow_id {
+                get {
+                    return ((int)(this[this.tablemonthlyDB_Ex.flow_idColumn]));
+                }
+                set {
+                    this[this.tablemonthlyDB_Ex.flow_idColumn] = value;
+                }
             }
         }
         
@@ -1309,7 +1306,19 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("type", "type");
             tableMapping.ColumnMappings.Add("amount", "amount");
             tableMapping.ColumnMappings.Add("date", "date");
+            tableMapping.ColumnMappings.Add("flow_id", "flow_id");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [monthlyDB] WHERE (([username] = @Original_username) AND ([type] = @O" +
+                "riginal_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AN" +
+                "D ([flow_id] = @Original_flow_id))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_flow_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "flow_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [monthlyDB] ([username], [type], [amount], [date]) VALUES (@username," +
@@ -1318,7 +1327,20 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [monthlyDB] SET [username] = @username, [type] = @type, [amount] = @amount, [date] = @date WHERE (([username] = @Original_username) AND ([type] = @Original_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AND ([flow_id] = @Original_flow_id))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_flow_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "flow_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1334,26 +1356,33 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        username, type, amount, date\r\nFROM            monthlyDB\r\nWHERE     " +
-                "   (type = \'Income\')";
+            this._commandCollection[0].CommandText = "SELECT username, type, amount, date , flow_id FROM monthlyDB WHERE (type = \'Incom" +
+                "e\') AND (username = @UN)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UN", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date)\r\nV" +
-                "ALUES        (@username,@type,@amount,@date)";
+                "ALUES        (@username,@type,@amount, CONVERT(DateTime,@date))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarBinary, 50, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(monthly_reportDBDataSet.monthlyDB_InDataTable dataTable) {
+        public virtual int Fill(monthly_reportDBDataSet.monthlyDB_InDataTable dataTable, string UN) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UN == null)) {
+                throw new global::System.ArgumentNullException("UN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UN));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1365,8 +1394,14 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual monthly_reportDBDataSet.monthlyDB_InDataTable GetData() {
+        public virtual monthly_reportDBDataSet.monthlyDB_InDataTable GetData(string UN) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UN == null)) {
+                throw new global::System.ArgumentNullException("UN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UN));
+            }
             monthly_reportDBDataSet.monthlyDB_InDataTable dataTable = new monthly_reportDBDataSet.monthlyDB_InDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1404,53 +1439,8 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username, string type, global::System.Nullable<decimal> amount, string date) {
-            if ((username == null)) {
-                throw new global::System.ArgumentNullException("username");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(username));
-            }
-            if ((type == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(type));
-            }
-            if ((amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(amount.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((date == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(date));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertARow(string username, string type, global::System.Nullable<decimal> amount, byte[] date) {
+        public virtual int Insert1(string username, string type, decimal amount, string date) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
@@ -1459,22 +1449,17 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                 command.Parameters[0].Value = ((string)(username));
             }
             if ((type == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("type");
             }
             else {
                 command.Parameters[1].Value = ((string)(type));
             }
-            if ((amount.HasValue == true)) {
-                command.Parameters[2].Value = ((decimal)(amount.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[2].Value = ((decimal)(amount));
             if ((date == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("date");
             }
             else {
-                command.Parameters[3].Value = ((byte[])(date));
+                command.Parameters[3].Value = ((string)(date));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1619,16 +1604,8 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("username", "username");
             tableMapping.ColumnMappings.Add("amount", "amount");
             tableMapping.ColumnMappings.Add("date", "date");
+            tableMapping.ColumnMappings.Add("flow_id", "flow_id");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [monthlyDB] ([username], [type], [amount], [date]) VALUES (@username," +
-                " @type, @amount, @date)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1641,20 +1618,36 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        username, type, amount, date\r\nFROM            monthlyDB\r\nWHERE     " +
-                "   (type = \'Expense\')";
+            this._commandCollection[0].CommandText = "SELECT username, type, amount ,date ,flow_id FROM monthlyDB WHERE (type = \'Expens" +
+                "e\') AND (username = @UN)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UN", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date)\r\nV" +
+                "ALUES        (@username,@type,@amount, CONVERT(DateTime,@date))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(monthly_reportDBDataSet.monthlyDB_ExDataTable dataTable) {
+        public virtual int Fill(monthly_reportDBDataSet.monthlyDB_ExDataTable dataTable, string UN) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UN == null)) {
+                throw new global::System.ArgumentNullException("UN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UN));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1666,8 +1659,14 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual monthly_reportDBDataSet.monthlyDB_ExDataTable GetData() {
+        public virtual monthly_reportDBDataSet.monthlyDB_ExDataTable GetData(string UN) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((UN == null)) {
+                throw new global::System.ArgumentNullException("UN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UN));
+            }
             monthly_reportDBDataSet.monthlyDB_ExDataTable dataTable = new monthly_reportDBDataSet.monthlyDB_ExDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1676,75 +1675,43 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(monthly_reportDBDataSet.monthlyDB_ExDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(monthly_reportDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "monthlyDB_Ex");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username, string type, global::System.Nullable<decimal> amount, string date) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int Insert1(string username, string type, decimal amount, string date) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(username));
+                command.Parameters[0].Value = ((string)(username));
             }
             if ((type == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(type));
+                command.Parameters[1].Value = ((string)(type));
             }
-            if ((amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(amount.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[2].Value = ((decimal)(amount));
             if ((date == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("date");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(date));
+                command.Parameters[3].Value = ((string)(date));
             }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
+                command.Connection.Open();
             }
+            int returnValue;
             try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
+                returnValue = command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
+                    command.Connection.Close();
                 }
             }
+            return returnValue;
         }
     }
     
@@ -1761,8 +1728,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         private UpdateOrderOption _updateOrder;
         
         private monthlyDB_InTableAdapter _monthlyDB_InTableAdapter;
-        
-        private monthlyDB_ExTableAdapter _monthlyDB_ExTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1795,20 +1760,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public monthlyDB_ExTableAdapter monthlyDB_ExTableAdapter {
-            get {
-                return this._monthlyDB_ExTableAdapter;
-            }
-            set {
-                this._monthlyDB_ExTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -1830,10 +1781,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                             && (this._monthlyDB_InTableAdapter.Connection != null))) {
                     return this._monthlyDB_InTableAdapter.Connection;
                 }
-                if (((this._monthlyDB_ExTableAdapter != null) 
-                            && (this._monthlyDB_ExTableAdapter.Connection != null))) {
-                    return this._monthlyDB_ExTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1848,9 +1795,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             get {
                 int count = 0;
                 if ((this._monthlyDB_InTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._monthlyDB_ExTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1873,15 +1817,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._monthlyDB_ExTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.monthlyDB_Ex.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._monthlyDB_ExTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1900,14 +1835,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._monthlyDB_ExTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.monthlyDB_Ex.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._monthlyDB_ExTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1918,14 +1845,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(monthly_reportDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._monthlyDB_ExTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.monthlyDB_Ex.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._monthlyDB_ExTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._monthlyDB_InTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.monthlyDB_In.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -1978,11 +1897,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._monthlyDB_ExTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._monthlyDB_ExTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -2022,15 +1936,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                     if (this._monthlyDB_InTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._monthlyDB_InTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._monthlyDB_InTableAdapter.Adapter);
-                    }
-                }
-                if ((this._monthlyDB_ExTableAdapter != null)) {
-                    revertConnections.Add(this._monthlyDB_ExTableAdapter, this._monthlyDB_ExTableAdapter.Connection);
-                    this._monthlyDB_ExTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._monthlyDB_ExTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._monthlyDB_ExTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._monthlyDB_ExTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._monthlyDB_ExTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2094,10 +1999,6 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
                 if ((this._monthlyDB_InTableAdapter != null)) {
                     this._monthlyDB_InTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._monthlyDB_InTableAdapter]));
                     this._monthlyDB_InTableAdapter.Transaction = null;
-                }
-                if ((this._monthlyDB_ExTableAdapter != null)) {
-                    this._monthlyDB_ExTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._monthlyDB_ExTableAdapter]));
-                    this._monthlyDB_ExTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

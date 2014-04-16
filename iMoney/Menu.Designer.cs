@@ -71,7 +71,7 @@
             // 
             // income_button
             // 
-            this.income_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.income_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.income_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.income_button.Cursor = System.Windows.Forms.Cursors.Default;
             this.income_button.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,7 +85,7 @@
             this.income_button.Size = new System.Drawing.Size(136, 515);
             this.income_button.TabIndex = 1;
             this.income_button.Text = "Income";
-            this.income_button.UseVisualStyleBackColor = true;
+            this.income_button.UseVisualStyleBackColor = false;
             this.income_button.Click += new System.EventHandler(this.income_button_Click);
             // 
             // splitContainer2
@@ -109,7 +109,7 @@
             // 
             // expense_button
             // 
-            this.expense_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.expense_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.expense_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.expense_button.Cursor = System.Windows.Forms.Cursors.Default;
             this.expense_button.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,7 +123,7 @@
             this.expense_button.Size = new System.Drawing.Size(141, 515);
             this.expense_button.TabIndex = 2;
             this.expense_button.Text = "Expense";
-            this.expense_button.UseVisualStyleBackColor = true;
+            this.expense_button.UseVisualStyleBackColor = false;
             this.expense_button.Click += new System.EventHandler(this.expense_button_Click);
             // 
             // splitContainer3
@@ -147,7 +147,7 @@
             // 
             // report_button
             // 
-            this.report_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.report_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.report_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.report_button.Cursor = System.Windows.Forms.Cursors.Default;
             this.report_button.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,12 +161,12 @@
             this.report_button.Size = new System.Drawing.Size(140, 515);
             this.report_button.TabIndex = 3;
             this.report_button.Text = "Report";
-            this.report_button.UseVisualStyleBackColor = true;
+            this.report_button.UseVisualStyleBackColor = false;
             this.report_button.Click += new System.EventHandler(this.report_button_Click);
             // 
             // logout_button
             // 
-            this.logout_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.logout_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.logout_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logout_button.Cursor = System.Windows.Forms.Cursors.Default;
             this.logout_button.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -180,7 +180,7 @@
             this.logout_button.Size = new System.Drawing.Size(141, 515);
             this.logout_button.TabIndex = 4;
             this.logout_button.Text = "Log Out";
-            this.logout_button.UseVisualStyleBackColor = true;
+            this.logout_button.UseVisualStyleBackColor = false;
             this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // Menu

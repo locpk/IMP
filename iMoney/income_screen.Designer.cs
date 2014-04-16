@@ -91,7 +91,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.exit_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.exit_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -103,8 +103,8 @@
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(140, 126);
             this.exit_button.TabIndex = 4;
-            this.exit_button.Text = "Exit";
-            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Text = "Return";
+            this.exit_button.UseVisualStyleBackColor = false;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // save_date
@@ -132,7 +132,7 @@
             // 
             // save_button
             // 
-            this.save_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.save_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.save_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.save_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.save_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -145,7 +145,7 @@
             this.save_button.Size = new System.Drawing.Size(140, 126);
             this.save_button.TabIndex = 3;
             this.save_button.Text = "Save";
-            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.UseVisualStyleBackColor = false;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
             // label1
@@ -215,13 +215,13 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.monthlyDB_InTableAdapter = this.monthlyDB_InTableAdapter;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.monthlyDB_InTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // income_screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 539);
             this.Controls.Add(this.label4);

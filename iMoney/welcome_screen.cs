@@ -137,7 +137,7 @@ namespace iMoney
         private void label1_Click(object sender, EventArgs e)
         {
             Confirm_Box new_Confirm_Box = new Confirm_Box();
-            DialogResult result = new_Confirm_Box.Show("So sad that making the final project \n without Benny and Roy! \n 不是说好做彼此的天使吗 :)");
+            DialogResult result = new_Confirm_Box.Show("Designed by \n Tom Chan 12303000002");
         }
 
         //end of hash functions

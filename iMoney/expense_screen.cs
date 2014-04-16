@@ -22,7 +22,7 @@ namespace iMoney
         private void expense_screen_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_Ex' table. You can move, or remove it, as needed.
-            this.monthlyDB_ExTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_Ex);
+            this.monthlyDB_ExTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_Ex,UN);
 
         }
 
@@ -33,7 +33,7 @@ namespace iMoney
             DialogResult result = new_Confirm_Box.Show("Are you sure?");
             if (result == DialogResult.OK)
             {
-                this.monthlyDB_ExTableAdapter.Insert(UN, "Expense", amount_picker.Value, save_date.Value.ToShortDateString());
+                this.monthlyDB_ExTableAdapter.Insert1(UN, "Expense", amount_picker.Value, save_date.Value.ToString());
                 amount_picker.Value = 0;
             }
 

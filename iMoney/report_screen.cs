@@ -22,11 +22,10 @@ namespace iMoney
         private void report_screen_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_Ex' table. You can move, or remove it, as needed.
-            this.monthlyDB_ExTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_Ex);
+            this.monthlyDB_ExTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_Ex,UN);
             // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
-            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In);
-            // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
-            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In);
+            this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In,UN);
+
             
             
           
@@ -47,6 +46,11 @@ namespace iMoney
                     return;
                 }
             }
+        }
+
+        private void monthlyDBExBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
 
         

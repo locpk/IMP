@@ -58,7 +58,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.exit_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.exit_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -70,8 +70,8 @@
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(140, 126);
             this.exit_button.TabIndex = 42;
-            this.exit_button.Text = "Exit";
-            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Text = "Return";
+            this.exit_button.UseVisualStyleBackColor = false;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // save_date
@@ -83,6 +83,8 @@
             this.save_date.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.save_date.Location = new System.Drawing.Point(262, 247);
+            this.save_date.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.save_date.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.save_date.Name = "save_date";
             this.save_date.Size = new System.Drawing.Size(107, 20);
             this.save_date.TabIndex = 40;
@@ -99,7 +101,7 @@
             // 
             // save_button
             // 
-            this.save_button.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.save_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.save_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.save_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.save_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -112,7 +114,7 @@
             this.save_button.Size = new System.Drawing.Size(140, 126);
             this.save_button.TabIndex = 41;
             this.save_button.Text = "Save";
-            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.UseVisualStyleBackColor = false;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
             // label1
@@ -172,13 +174,13 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.monthlyDB_ExTableAdapter = this.monthlyDB_ExTableAdapter;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.monthlyDB_InTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // expense_screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 539);
             this.Controls.Add(this.label4);
