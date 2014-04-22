@@ -26,31 +26,22 @@ namespace iMoney
             // TODO: This line of code loads data into the 'monthly_reportDBDataSet.monthlyDB_In' table. You can move, or remove it, as needed.
             this.monthlyDB_InTableAdapter.Fill(this.monthly_reportDBDataSet.monthlyDB_In,UN);
 
-            
-            
-          
-           
             this.reportViewer1.RefreshReport();
         }
 
         private void exit_button_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm is Menu)
                 {
                     frm.Show();
 
-                    this.Close();
+                    this.Activate();
                     return;
                 }
             }
-        }
-
-        private void monthlyDBExBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
 
         

@@ -31,18 +31,41 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.exit_button = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.monthlyDBInBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthly_reportDBDataSet = new iMoney.monthly_reportDBDataSet();
             this.monthlyDBExBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthlyDB_InTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter();
             this.monthlyDB_ExTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter();
+            this.exit_button = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyDBInBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyDBExBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // monthlyDBInBindingSource
+            // 
+            this.monthlyDBInBindingSource.DataMember = "monthlyDB_In";
+            this.monthlyDBInBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthly_reportDBDataSet
+            // 
+            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
+            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monthlyDBExBindingSource
+            // 
+            this.monthlyDBExBindingSource.DataMember = "monthlyDB_Ex";
+            this.monthlyDBExBindingSource.DataSource = this.monthly_reportDBDataSet;
+            // 
+            // monthlyDB_InTableAdapter
+            // 
+            this.monthlyDB_InTableAdapter.ClearBeforeFill = true;
+            // 
+            // monthlyDB_ExTableAdapter
+            // 
+            this.monthlyDB_ExTableAdapter.ClearBeforeFill = true;
             // 
             // exit_button
             // 
@@ -83,33 +106,10 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "iMoney.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(2, 66);
+            this.reportViewer1.Location = new System.Drawing.Point(18, 66);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(881, 830);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // monthlyDBInBindingSource
-            // 
-            this.monthlyDBInBindingSource.DataMember = "monthlyDB_In";
-            this.monthlyDBInBindingSource.DataSource = this.monthly_reportDBDataSet;
-            // 
-            // monthly_reportDBDataSet
-            // 
-            this.monthly_reportDBDataSet.DataSetName = "monthly_reportDBDataSet";
-            this.monthly_reportDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // monthlyDBExBindingSource
-            // 
-            this.monthlyDBExBindingSource.DataMember = "monthlyDB_Ex";
-            this.monthlyDBExBindingSource.DataSource = this.monthly_reportDBDataSet;
-            // 
-            // monthlyDB_InTableAdapter
-            // 
-            this.monthlyDB_InTableAdapter.ClearBeforeFill = true;
-            // 
-            // monthlyDB_ExTableAdapter
-            // 
-            this.monthlyDB_ExTableAdapter.ClearBeforeFill = true;
             // 
             // report_screen
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.exit_button;
-            this.ClientSize = new System.Drawing.Size(886, 899);
+            this.ClientSize = new System.Drawing.Size(902, 899);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.reportViewer1);

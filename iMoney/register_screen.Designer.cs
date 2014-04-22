@@ -244,15 +244,16 @@
             this.Password.TabIndex = 7;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Password.UseSystemPasswordChar = true;
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             this.Password.Validating += new System.ComponentModel.CancelEventHandler(this.Password_Validating);
             this.Password.Validated += new System.EventHandler(this.Password_Validated);
             // 
             // phone_selector
             // 
-            this.phone_selector.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.phone_selector.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.phone_selector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.phone_selector.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone_selector.ForeColor = System.Drawing.Color.Orange;
+            this.phone_selector.ForeColor = System.Drawing.Color.Gold;
             this.phone_selector.FormattingEnabled = true;
             this.phone_selector.Items.AddRange(new object[] {
             "US +1",
@@ -368,7 +369,7 @@
             // register_screen
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -399,7 +400,7 @@
             this.Controls.Add(this.First_name);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gold;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

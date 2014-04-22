@@ -40,7 +40,9 @@ namespace iMoney
             DialogResult result = new_Confirm_Box.Show("Are you sure?");
             if (result == DialogResult.OK)
             {
-                this.monthlyDB_InTableAdapter.Insert1(UN, "Income", amount_picker.Value, save_date.Value.ToString());
+                this.monthlyDB_InTableAdapter.Insert1(UN, "Income", amount_picker.Value, save_date.Value.ToString(),remark_box.Text);
+                //clear all boxes
+                remark_box.Text = null;
                 amount_picker.Value = 0;
             }
         }
@@ -54,7 +56,7 @@ namespace iMoney
             {
                 if (frm is Menu)
                 {
-                    frm.Show();
+                    frm.Activate();
                     return;
                 }
             }

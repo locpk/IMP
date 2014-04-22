@@ -47,6 +47,8 @@
             this.monthlyDB_InBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthlyDB_InTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter();
             this.tableAdapterManager = new iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
+            this.label2 = new System.Windows.Forms.Label();
+            this.remark_box = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_InBindingSource)).BeginInit();
@@ -99,7 +101,7 @@
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Poor Richard", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.Gold;
-            this.exit_button.Location = new System.Drawing.Point(265, 327);
+            this.exit_button.Location = new System.Drawing.Point(256, 346);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(140, 126);
             this.exit_button.TabIndex = 4;
@@ -115,7 +117,7 @@
             this.save_date.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.save_date.Location = new System.Drawing.Point(265, 225);
+            this.save_date.Location = new System.Drawing.Point(256, 131);
             this.save_date.Name = "save_date";
             this.save_date.Size = new System.Drawing.Size(107, 20);
             this.save_date.TabIndex = 2;
@@ -124,7 +126,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(96, 222);
+            this.label3.Location = new System.Drawing.Point(87, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 35;
@@ -140,7 +142,7 @@
             this.save_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_button.Font = new System.Drawing.Font("Poor Richard", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save_button.ForeColor = System.Drawing.Color.Gold;
-            this.save_button.Location = new System.Drawing.Point(78, 327);
+            this.save_button.Location = new System.Drawing.Point(69, 346);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(140, 126);
             this.save_button.TabIndex = 3;
@@ -152,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(373, 127);
+            this.label1.Location = new System.Drawing.Point(370, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 24);
             this.label1.TabIndex = 31;
@@ -162,7 +164,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(96, 127);
+            this.label7.Location = new System.Drawing.Point(87, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 24);
             this.label7.TabIndex = 30;
@@ -175,7 +177,7 @@
             this.amount_picker.DecimalPlaces = 2;
             this.amount_picker.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amount_picker.ForeColor = System.Drawing.Color.Gold;
-            this.amount_picker.Location = new System.Drawing.Point(265, 124);
+            this.amount_picker.Location = new System.Drawing.Point(256, 69);
             this.amount_picker.Margin = new System.Windows.Forms.Padding(0);
             this.amount_picker.Maximum = new decimal(new int[] {
             1316134911,
@@ -219,11 +221,34 @@
             this.tableAdapterManager.monthlyDB_InTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(87, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 24);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Remark";
+            // 
+            // remark_box
+            // 
+            this.remark_box.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.remark_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remark_box.ForeColor = System.Drawing.Color.Gold;
+            this.remark_box.Location = new System.Drawing.Point(172, 184);
+            this.remark_box.Multiline = true;
+            this.remark_box.Name = "remark_box";
+            this.remark_box.Size = new System.Drawing.Size(212, 115);
+            this.remark_box.TabIndex = 40;
+            // 
             // income_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 539);
+            this.Controls.Add(this.remark_box);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.save_date);
@@ -264,6 +289,8 @@
         private System.Windows.Forms.BindingSource monthlyDB_InBindingSource;
         private monthly_reportDBDataSetTableAdapters.monthlyDB_InTableAdapter monthlyDB_InTableAdapter;
         private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox remark_box;
         
     }
 }

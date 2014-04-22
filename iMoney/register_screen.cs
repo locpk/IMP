@@ -398,7 +398,7 @@ namespace iMoney
             {
                 if (frm is welcome_screen)
                 {
-                    frm.Show();
+                    frm.Activate();
                     return;
                 }
             }
@@ -420,6 +420,11 @@ namespace iMoney
         private void confirmPW_Validated(object sender, EventArgs e)
         {
             this.errorProvider1.SetError(this.confirmPW, string.Empty);
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         

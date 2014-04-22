@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(expense_screen));
             this.label4 = new System.Windows.Forms.Label();
             this.exit_button = new System.Windows.Forms.Button();
             this.save_date = new System.Windows.Forms.DateTimePicker();
@@ -41,6 +42,8 @@
             this.monthlyDB_ExBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthlyDB_ExTableAdapter = new iMoney.monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter();
             this.tableAdapterManager = new iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager();
+            this.remark_box = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.amount_picker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthly_reportDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyDB_ExBindingSource)).BeginInit();
@@ -82,7 +85,7 @@
             this.save_date.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlDark;
             this.save_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.save_date.Location = new System.Drawing.Point(262, 247);
+            this.save_date.Location = new System.Drawing.Point(256, 131);
             this.save_date.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.save_date.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.save_date.Name = "save_date";
@@ -93,7 +96,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 244);
+            this.label3.Location = new System.Drawing.Point(87, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 46;
@@ -121,7 +124,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(370, 127);
+            this.label1.Location = new System.Drawing.Point(364, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 24);
             this.label1.TabIndex = 44;
@@ -131,7 +134,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(93, 127);
+            this.label7.Location = new System.Drawing.Point(87, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 24);
             this.label7.TabIndex = 43;
@@ -144,7 +147,7 @@
             this.amount_picker.DecimalPlaces = 2;
             this.amount_picker.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amount_picker.ForeColor = System.Drawing.Color.Gold;
-            this.amount_picker.Location = new System.Drawing.Point(262, 124);
+            this.amount_picker.Location = new System.Drawing.Point(256, 69);
             this.amount_picker.Margin = new System.Windows.Forms.Padding(0);
             this.amount_picker.Maximum = new decimal(new int[] {
             1316134911,
@@ -178,11 +181,34 @@
             this.tableAdapterManager.monthlyDB_InTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = iMoney.monthly_reportDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // remark_box
+            // 
+            this.remark_box.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.remark_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remark_box.ForeColor = System.Drawing.Color.Gold;
+            this.remark_box.Location = new System.Drawing.Point(172, 184);
+            this.remark_box.Multiline = true;
+            this.remark_box.Name = "remark_box";
+            this.remark_box.Size = new System.Drawing.Size(212, 115);
+            this.remark_box.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poor Richard", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(87, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 24);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Remark";
+            // 
             // expense_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 539);
+            this.Controls.Add(this.remark_box);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.save_date);
@@ -191,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.amount_picker);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "expense_screen";
             this.Text = "expense_screen";
             this.Load += new System.EventHandler(this.expense_screen_Load);
@@ -216,5 +243,7 @@
         private System.Windows.Forms.BindingSource monthlyDB_ExBindingSource;
         private monthly_reportDBDataSetTableAdapters.monthlyDB_ExTableAdapter monthlyDB_ExTableAdapter;
         private monthly_reportDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox remark_box;
+        private System.Windows.Forms.Label label2;
     }
 }

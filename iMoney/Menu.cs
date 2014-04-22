@@ -43,7 +43,6 @@ namespace iMoney
             
             Form income = new income_screen(UN);
             income.Show();
-            this.Hide();
         }
 
         private void report_button_Click(object sender, EventArgs e)
@@ -51,14 +50,12 @@ namespace iMoney
             
             Form report = new report_screen(UN);
             report.Show();
-            this.Hide();
         }
 
         private void expense_button_Click(object sender, EventArgs e)
         {
             Form expense = new expense_screen(UN);
             expense.Show();
-            this.Hide();
         }
     }
 }

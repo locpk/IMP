@@ -46,9 +46,6 @@ namespace iMoney
 
         private void signup_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            
-            
             register_screen new_register_screen = new register_screen();
             new_register_screen.Show();
         }
@@ -128,7 +125,7 @@ namespace iMoney
 
             return sb.ToString();
         }
-
+        //end of hash functions
         private void usernamebox_TextChanged(object sender, EventArgs e)
         {
 
@@ -140,7 +137,13 @@ namespace iMoney
             DialogResult result = new_Confirm_Box.Show("Designed by \n Tom Chan 12303000002");
         }
 
-        //end of hash functions
+        private void label4_Click(object sender, EventArgs e)
+        {
+           Change_Password frm = new Change_Password();
+           frm.Show();
+        }
+
+       
     }
 
 }

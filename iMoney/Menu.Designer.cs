@@ -74,7 +74,6 @@
             this.income_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.income_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.income_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.income_button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.income_button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.income_button.FlatAppearance.BorderSize = 0;
             this.income_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,7 +192,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Menu";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

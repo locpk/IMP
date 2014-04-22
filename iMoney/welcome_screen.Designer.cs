@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // login_button
@@ -166,6 +167,17 @@
             this.label9.TabIndex = 49;
             this.label9.Text = "Tom Chan™";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Harlow Solid Italic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(391, 256);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 24);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "Change Passcode";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // welcome_screen
             // 
             this.AcceptButton = this.login_button;
@@ -174,6 +186,7 @@
             this.AutoScroll = false;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(589, 500);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.signup_button);
             this.Controls.Add(this.exit_button);
@@ -203,5 +216,6 @@
         private System.Windows.Forms.Button exit_button;
         private System.Windows.Forms.Button signup_button;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
     }
 }

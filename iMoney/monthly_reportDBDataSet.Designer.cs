@@ -324,6 +324,8 @@ namespace iMoney {
             
             private global::System.Data.DataColumn columnflow_id;
             
+            private global::System.Data.DataColumn columnremark;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public monthlyDB_InDataTable() {
@@ -399,6 +401,14 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn remarkColumn {
+                get {
+                    return this.columnremark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -434,14 +444,15 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public monthlyDB_InRow AddmonthlyDB_InRow(string username, string type, decimal amount, System.DateTime date) {
+            public monthlyDB_InRow AddmonthlyDB_InRow(string username, string type, decimal amount, System.DateTime date, string remark) {
                 monthlyDB_InRow rowmonthlyDB_InRow = ((monthlyDB_InRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         username,
                         type,
                         amount,
                         date,
-                        null};
+                        null,
+                        remark};
                 rowmonthlyDB_InRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmonthlyDB_InRow);
                 return rowmonthlyDB_InRow;
@@ -480,6 +491,7 @@ namespace iMoney {
                 this.columnamount = base.Columns["amount"];
                 this.columndate = base.Columns["date"];
                 this.columnflow_id = base.Columns["flow_id"];
+                this.columnremark = base.Columns["remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -495,6 +507,8 @@ namespace iMoney {
                 base.Columns.Add(this.columndate);
                 this.columnflow_id = new global::System.Data.DataColumn("flow_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnflow_id);
+                this.columnremark = new global::System.Data.DataColumn("remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnremark);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusername,
                                 this.columntype,
@@ -512,6 +526,7 @@ namespace iMoney {
                 this.columnflow_id.AutoIncrementStep = -1;
                 this.columnflow_id.AllowDBNull = false;
                 this.columnflow_id.ReadOnly = true;
+                this.columnremark.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -655,6 +670,8 @@ namespace iMoney {
             
             private global::System.Data.DataColumn columnflow_id;
             
+            private global::System.Data.DataColumn columnremark;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public monthlyDB_ExDataTable() {
@@ -730,6 +747,14 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn remarkColumn {
+                get {
+                    return this.columnremark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -765,14 +790,15 @@ namespace iMoney {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public monthlyDB_ExRow AddmonthlyDB_ExRow(string type, string username, decimal amount, System.DateTime date) {
+            public monthlyDB_ExRow AddmonthlyDB_ExRow(string type, string username, decimal amount, System.DateTime date, string remark) {
                 monthlyDB_ExRow rowmonthlyDB_ExRow = ((monthlyDB_ExRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         type,
                         username,
                         amount,
                         date,
-                        null};
+                        null,
+                        remark};
                 rowmonthlyDB_ExRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmonthlyDB_ExRow);
                 return rowmonthlyDB_ExRow;
@@ -811,6 +837,7 @@ namespace iMoney {
                 this.columnamount = base.Columns["amount"];
                 this.columndate = base.Columns["date"];
                 this.columnflow_id = base.Columns["flow_id"];
+                this.columnremark = base.Columns["remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -826,6 +853,8 @@ namespace iMoney {
                 base.Columns.Add(this.columndate);
                 this.columnflow_id = new global::System.Data.DataColumn("flow_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnflow_id);
+                this.columnremark = new global::System.Data.DataColumn("remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnremark);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusername,
                                 this.columntype,
@@ -843,6 +872,7 @@ namespace iMoney {
                 this.columnflow_id.AutoIncrementStep = -1;
                 this.columnflow_id.AllowDBNull = false;
                 this.columnflow_id.ReadOnly = true;
+                this.columnremark.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1037,6 +1067,34 @@ namespace iMoney {
                     this[this.tablemonthlyDB_In.flow_idColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string remark {
+                get {
+                    try {
+                        return ((string)(this[this.tablemonthlyDB_In.remarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remark\' in table \'monthlyDB_In\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemonthlyDB_In.remarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsremarkNull() {
+                return this.IsNull(this.tablemonthlyDB_In.remarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetremarkNull() {
+                this[this.tablemonthlyDB_In.remarkColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1106,6 +1164,34 @@ namespace iMoney {
                 set {
                     this[this.tablemonthlyDB_Ex.flow_idColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string remark {
+                get {
+                    try {
+                        return ((string)(this[this.tablemonthlyDB_Ex.remarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remark\' in table \'monthlyDB_Ex\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemonthlyDB_Ex.remarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsremarkNull() {
+                return this.IsNull(this.tablemonthlyDB_Ex.remarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetremarkNull() {
+                this[this.tablemonthlyDB_Ex.remarkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1307,40 +1393,45 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("amount", "amount");
             tableMapping.ColumnMappings.Add("date", "date");
             tableMapping.ColumnMappings.Add("flow_id", "flow_id");
+            tableMapping.ColumnMappings.Add("remark", "remark");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [monthlyDB] WHERE (([username] = @Original_username) AND ([type] = @O" +
-                "riginal_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AN" +
-                "D ([flow_id] = @Original_flow_id))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [monthlyDB] WHERE (([username] = @Original_username) AND ([type] = @Original_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AND ([flow_id] = @Original_flow_id) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_flow_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "flow_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_remark", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_remark", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [monthlyDB] ([username], [type], [amount], [date]) VALUES (@username," +
-                " @type, @amount, @date)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [monthlyDB] ([username], [type], [amount], [date], [remark]) VALUES (" +
+                "@username, @type, @amount, @date, @remark)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@remark", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [monthlyDB] SET [username] = @username, [type] = @type, [amount] = @amount, [date] = @date WHERE (([username] = @Original_username) AND ([type] = @Original_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AND ([flow_id] = @Original_flow_id))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [monthlyDB] SET [username] = @username, [type] = @type, [amount] = @amount, [date] = @date, [remark] = @remark WHERE (([username] = @Original_username) AND ([type] = @Original_type) AND ([amount] = @Original_amount) AND ([date] = @Original_date) AND ([flow_id] = @Original_flow_id) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@remark", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_flow_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "flow_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_remark", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_remark", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1356,19 +1447,20 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT username, type, amount, date , flow_id FROM monthlyDB WHERE (type = \'Incom" +
-                "e\') AND (username = @UN)";
+            this._commandCollection[0].CommandText = "SELECT        username, type, amount, date, flow_id, remark\r\nFROM            mont" +
+                "hlyDB\r\nWHERE        (type = \'Income\') AND (username = @UN)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UN", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date)\r\nV" +
-                "ALUES        (@username,@type,@amount, CONVERT(DateTime,@date))";
+            this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date, re" +
+                "mark)\r\nVALUES        (@username,@type,@amount, CONVERT(DateTime,@date),@remark)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@remark", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1440,7 +1532,7 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Insert1(string username, string type, decimal amount, string date) {
+        public virtual int Insert1(string username, string type, decimal amount, string date, string remark) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
@@ -1460,6 +1552,12 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             }
             else {
                 command.Parameters[3].Value = ((string)(date));
+            }
+            if ((remark == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(remark));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1605,6 +1703,7 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("amount", "amount");
             tableMapping.ColumnMappings.Add("date", "date");
             tableMapping.ColumnMappings.Add("flow_id", "flow_id");
+            tableMapping.ColumnMappings.Add("remark", "remark");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1621,19 +1720,20 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT username, type, amount ,date ,flow_id FROM monthlyDB WHERE (type = \'Expens" +
-                "e\') AND (username = @UN)";
+            this._commandCollection[0].CommandText = "SELECT        username, type, amount, date, flow_id, remark\r\nFROM            mont" +
+                "hlyDB\r\nWHERE        (type = \'Expense\') AND (username = @UN)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UN", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date)\r\nV" +
-                "ALUES        (@username,@type,@amount, CONVERT(DateTime,@date))";
+            this._commandCollection[1].CommandText = "INSERT INTO monthlyDB\r\n                         (username, type, amount, date, re" +
+                "mark)\r\nVALUES        (@username,@type,@amount, CONVERT(DateTime,@date),@remark)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@remark", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "remark", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1676,7 +1776,7 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Insert1(string username, string type, decimal amount, string date) {
+        public virtual int Insert1(string username, string type, decimal amount, string date, string remark) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
@@ -1696,6 +1796,12 @@ namespace iMoney.monthly_reportDBDataSetTableAdapters {
             }
             else {
                 command.Parameters[3].Value = ((string)(date));
+            }
+            if ((remark == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(remark));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

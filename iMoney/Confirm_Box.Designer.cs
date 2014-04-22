@@ -29,11 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Confirm_Box));
+            this.label9 = new System.Windows.Forms.Label();
             this.no_button = new System.Windows.Forms.Button();
             this.ok_button = new System.Windows.Forms.Button();
             this.message = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Harlow Solid Italic", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Orange;
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 36);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Hey!";
             // 
             // no_button
             // 
@@ -81,21 +92,12 @@
             this.message.AutoSize = true;
             this.message.Cursor = System.Windows.Forms.Cursors.No;
             this.message.Font = new System.Drawing.Font("Quicksand Book", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.message.ForeColor = System.Drawing.Color.Orange;
             this.message.Location = new System.Drawing.Point(37, 90);
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(0, 27);
             this.message.TabIndex = 0;
             this.message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Harlow Solid Italic", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 36);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "Hey!";
             // 
             // Confirm_Box
             // 
