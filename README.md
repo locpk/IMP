@@ -11,6 +11,6 @@ IMP
 			So be SURE to install every runtime before compiling or kicking off the program, 
 			if not it will crash abnormally.
 			
-			A zipped SETUP can be downloaded at:(RC 1.1.0.11)
+			A zipped SETUP can be downloaded at:http://1drv.ms/1lBH5sT(Ver 1.2.0.14)
 			The SETUP will automatically download needed runtime if the user computer doesn't have.
 IMP
